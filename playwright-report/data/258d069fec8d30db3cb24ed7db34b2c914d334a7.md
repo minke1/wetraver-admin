@@ -1,0 +1,421 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "Trenvl 관리자" [ref=e5] [cursor=pointer]:
+        - /url: /dashboard
+        - heading "Trenvl" [level=1] [ref=e6]
+        - paragraph [ref=e7]: 관리자
+      - navigation [ref=e8]:
+        - generic [ref=e9]:
+          - link "대시보드" [ref=e10] [cursor=pointer]:
+            - /url: /dashboard
+            - img [ref=e12]
+            - text: 대시보드
+          - heading "상품 관리" [level=3] [ref=e18]:
+            - button "상품 관리" [ref=e19] [cursor=pointer]:
+              - generic [ref=e20]:
+                - img [ref=e22]
+                - generic [ref=e26]: 상품 관리
+              - img [ref=e27]
+          - heading "예약 관리" [level=3] [ref=e30]:
+            - button "예약 관리" [ref=e31] [cursor=pointer]:
+              - generic [ref=e32]:
+                - img [ref=e34]
+                - generic [ref=e36]: 예약 관리
+              - img [ref=e37]
+          - heading "회원 관리" [level=3] [ref=e40]:
+            - button "회원 관리" [ref=e41] [cursor=pointer]:
+              - generic [ref=e42]:
+                - img [ref=e44]
+                - generic [ref=e49]: 회원 관리
+              - img [ref=e50]
+          - heading "주문 관리" [level=3] [ref=e53]:
+            - button "주문 관리" [ref=e54] [cursor=pointer]:
+              - generic [ref=e55]:
+                - img [ref=e57]
+                - generic [ref=e61]: 주문 관리
+              - img [ref=e62]
+          - heading "게시판 관리" [level=3] [ref=e65]:
+            - button "게시판 관리" [ref=e66] [cursor=pointer]:
+              - generic [ref=e67]:
+                - img [ref=e69]
+                - generic [ref=e72]: 게시판 관리
+              - img [ref=e73]
+          - link "리뷰 관리" [ref=e75] [cursor=pointer]:
+            - /url: /reviews
+            - img [ref=e77]
+            - text: 리뷰 관리
+          - heading "통계" [level=3] [ref=e80]:
+            - button "통계" [ref=e81] [cursor=pointer]:
+              - generic [ref=e82]:
+                - img [ref=e84]
+                - generic [ref=e86]: 통계
+              - img [ref=e87]
+          - heading "설정" [level=3] [ref=e90]:
+            - button "설정" [ref=e91] [cursor=pointer]:
+              - generic [ref=e92]:
+                - img [ref=e94]
+                - generic [ref=e97]: 설정
+              - img [ref=e98]
+    - generic [ref=e100]:
+      - banner [ref=e101]:
+        - heading "관리자 대시보드" [level=2] [ref=e103]
+        - generic [ref=e104]:
+          - button [ref=e105] [cursor=pointer]:
+            - img
+          - button "관리자 admin@trenvl.com" [ref=e107] [cursor=pointer]:
+            - generic [ref=e108]:
+              - img
+            - generic [ref=e109]:
+              - paragraph [ref=e110]: 관리자
+              - paragraph [ref=e111]: admin@trenvl.com
+      - main [ref=e112]:
+        - generic [ref=e113]:
+          - generic [ref=e114]:
+            - heading "회원 관리" [level=1] [ref=e115]
+            - paragraph [ref=e116]: 총 250명의 회원
+          - generic [ref=e117]:
+            - generic [ref=e118]:
+              - img [ref=e119]
+              - heading "필터" [level=2] [ref=e121]
+            - generic [ref=e122]:
+              - generic [ref=e123]:
+                - img [ref=e124]
+                - textbox "회원명, 이메일 검색" [ref=e127]
+              - combobox [ref=e128] [cursor=pointer]:
+                - generic: 전체
+                - img [ref=e129]
+              - combobox [ref=e131] [cursor=pointer]:
+                - generic: 전체
+                - img [ref=e132]
+              - button "초기화" [ref=e134] [cursor=pointer]
+          - table [ref=e137]:
+            - rowgroup [ref=e138]:
+              - row "회원정보 등급 주문수 총 구매액 포인트 가입일 상태" [ref=e139]:
+                - cell "회원정보" [ref=e140]
+                - cell "등급" [ref=e141]
+                - cell "주문수" [ref=e142]
+                - cell "총 구매액" [ref=e143]
+                - cell "포인트" [ref=e144]
+                - cell "가입일" [ref=e145]
+                - cell "상태" [ref=e146]
+            - rowgroup [ref=e147]:
+              - row "회원1 member1@example.com SILVER 14회 ₩3,675,854 36,758P 2024-03-02 정상" [ref=e148]:
+                - cell "회원1 member1@example.com" [ref=e149]:
+                  - generic [ref=e151]:
+                    - generic [ref=e152]: 회원1
+                    - generic [ref=e153]:
+                      - img [ref=e154]
+                      - text: member1@example.com
+                - cell "SILVER" [ref=e157]:
+                  - generic [ref=e158]: SILVER
+                - cell "14회" [ref=e159]
+                - cell "₩3,675,854" [ref=e160]
+                - cell "36,758P" [ref=e161]
+                - cell "2024-03-02" [ref=e162]
+                - cell "정상" [ref=e163]:
+                  - generic [ref=e164]: 정상
+              - row "회원2 member2@example.com SILVER 14회 ₩5,012,966 50,129P 2024-04-17 정상" [ref=e165]:
+                - cell "회원2 member2@example.com" [ref=e166]:
+                  - generic [ref=e168]:
+                    - generic [ref=e169]: 회원2
+                    - generic [ref=e170]:
+                      - img [ref=e171]
+                      - text: member2@example.com
+                - cell "SILVER" [ref=e174]:
+                  - generic [ref=e175]: SILVER
+                - cell "14회" [ref=e176]
+                - cell "₩5,012,966" [ref=e177]
+                - cell "50,129P" [ref=e178]
+                - cell "2024-04-17" [ref=e179]
+                - cell "정상" [ref=e180]:
+                  - generic [ref=e181]: 정상
+              - row "회원3 member3@example.com BRONZE 0회 ₩0 0P 2022-09-08 정상" [ref=e182]:
+                - cell "회원3 member3@example.com" [ref=e183]:
+                  - generic [ref=e185]:
+                    - generic [ref=e186]: 회원3
+                    - generic [ref=e187]:
+                      - img [ref=e188]
+                      - text: member3@example.com
+                - cell "BRONZE" [ref=e191]:
+                  - generic [ref=e192]: BRONZE
+                - cell "0회" [ref=e193]
+                - cell "₩0" [ref=e194]
+                - cell "0P" [ref=e195]
+                - cell "2022-09-08" [ref=e196]
+                - cell "정상" [ref=e197]:
+                  - generic [ref=e198]: 정상
+              - row "회원4 member4@example.com SILVER 15회 ₩2,767,695 27,676P 2022-04-03 정상" [ref=e199]:
+                - cell "회원4 member4@example.com" [ref=e200]:
+                  - generic [ref=e202]:
+                    - generic [ref=e203]: 회원4
+                    - generic [ref=e204]:
+                      - img [ref=e205]
+                      - text: member4@example.com
+                - cell "SILVER" [ref=e208]:
+                  - generic [ref=e209]: SILVER
+                - cell "15회" [ref=e210]
+                - cell "₩2,767,695" [ref=e211]
+                - cell "27,676P" [ref=e212]
+                - cell "2022-04-03" [ref=e213]
+                - cell "정상" [ref=e214]:
+                  - generic [ref=e215]: 정상
+              - row "회원5 member5@example.com BRONZE 4회 ₩1,010,624 10,106P 2020-05-06 정상" [ref=e216]:
+                - cell "회원5 member5@example.com" [ref=e217]:
+                  - generic [ref=e219]:
+                    - generic [ref=e220]: 회원5
+                    - generic [ref=e221]:
+                      - img [ref=e222]
+                      - text: member5@example.com
+                - cell "BRONZE" [ref=e225]:
+                  - generic [ref=e226]: BRONZE
+                - cell "4회" [ref=e227]
+                - cell "₩1,010,624" [ref=e228]
+                - cell "10,106P" [ref=e229]
+                - cell "2020-05-06" [ref=e230]
+                - cell "정상" [ref=e231]:
+                  - generic [ref=e232]: 정상
+              - row "회원6 member6@example.com BRONZE 2회 ₩503,410 5,034P 2023-05-02 정상" [ref=e233]:
+                - cell "회원6 member6@example.com" [ref=e234]:
+                  - generic [ref=e236]:
+                    - generic [ref=e237]: 회원6
+                    - generic [ref=e238]:
+                      - img [ref=e239]
+                      - text: member6@example.com
+                - cell "BRONZE" [ref=e242]:
+                  - generic [ref=e243]: BRONZE
+                - cell "2회" [ref=e244]
+                - cell "₩503,410" [ref=e245]
+                - cell "5,034P" [ref=e246]
+                - cell "2023-05-02" [ref=e247]
+                - cell "정상" [ref=e248]:
+                  - generic [ref=e249]: 정상
+              - row "회원7 member7@example.com VIP 33회 ₩12,464,067 124,640P 2020-08-22 정상" [ref=e250]:
+                - cell "회원7 member7@example.com" [ref=e251]:
+                  - generic [ref=e253]:
+                    - generic [ref=e254]: 회원7
+                    - generic [ref=e255]:
+                      - img [ref=e256]
+                      - text: member7@example.com
+                - cell "VIP" [ref=e259]:
+                  - generic [ref=e260]: VIP
+                - cell "33회" [ref=e261]
+                - cell "₩12,464,067" [ref=e262]
+                - cell "124,640P" [ref=e263]
+                - cell "2020-08-22" [ref=e264]
+                - cell "정상" [ref=e265]:
+                  - generic [ref=e266]: 정상
+              - row "회원8 member8@example.com GOLD 30회 ₩3,078,300 30,783P 2024-01-04 정상" [ref=e267]:
+                - cell "회원8 member8@example.com" [ref=e268]:
+                  - generic [ref=e270]:
+                    - generic [ref=e271]: 회원8
+                    - generic [ref=e272]:
+                      - img [ref=e273]
+                      - text: member8@example.com
+                - cell "GOLD" [ref=e276]:
+                  - generic [ref=e277]: GOLD
+                - cell "30회" [ref=e278]
+                - cell "₩3,078,300" [ref=e279]
+                - cell "30,783P" [ref=e280]
+                - cell "2024-01-04" [ref=e281]
+                - cell "정상" [ref=e282]:
+                  - generic [ref=e283]: 정상
+              - row "회원9 member9@example.com SILVER 14회 ₩1,760,150 17,601P 2024-07-10 정상" [ref=e284]:
+                - cell "회원9 member9@example.com" [ref=e285]:
+                  - generic [ref=e287]:
+                    - generic [ref=e288]: 회원9
+                    - generic [ref=e289]:
+                      - img [ref=e290]
+                      - text: member9@example.com
+                - cell "SILVER" [ref=e293]:
+                  - generic [ref=e294]: SILVER
+                - cell "14회" [ref=e295]
+                - cell "₩1,760,150" [ref=e296]
+                - cell "17,601P" [ref=e297]
+                - cell "2024-07-10" [ref=e298]
+                - cell "정상" [ref=e299]:
+                  - generic [ref=e300]: 정상
+              - row "회원10 member10@example.com BRONZE 1회 ₩301,816 3,018P 2021-02-20 탈퇴" [ref=e301]:
+                - cell "회원10 member10@example.com" [ref=e302]:
+                  - generic [ref=e304]:
+                    - generic [ref=e305]: 회원10
+                    - generic [ref=e306]:
+                      - img [ref=e307]
+                      - text: member10@example.com
+                - cell "BRONZE" [ref=e310]:
+                  - generic [ref=e311]: BRONZE
+                - cell "1회" [ref=e312]
+                - cell "₩301,816" [ref=e313]
+                - cell "3,018P" [ref=e314]
+                - cell "2021-02-20" [ref=e315]
+                - cell "탈퇴" [ref=e316]:
+                  - generic [ref=e317]: 탈퇴
+              - row "회원11 member11@example.com VIP 66회 ₩9,813,738 98,137P 2020-01-22 정상" [ref=e318]:
+                - cell "회원11 member11@example.com" [ref=e319]:
+                  - generic [ref=e321]:
+                    - generic [ref=e322]: 회원11
+                    - generic [ref=e323]:
+                      - img [ref=e324]
+                      - text: member11@example.com
+                - cell "VIP" [ref=e327]:
+                  - generic [ref=e328]: VIP
+                - cell "66회" [ref=e329]
+                - cell "₩9,813,738" [ref=e330]
+                - cell "98,137P" [ref=e331]
+                - cell "2020-01-22" [ref=e332]
+                - cell "정상" [ref=e333]:
+                  - generic [ref=e334]: 정상
+              - row "회원12 member12@example.com BRONZE 3회 ₩672,702 6,727P 2023-02-06 탈퇴" [ref=e335]:
+                - cell "회원12 member12@example.com" [ref=e336]:
+                  - generic [ref=e338]:
+                    - generic [ref=e339]: 회원12
+                    - generic [ref=e340]:
+                      - img [ref=e341]
+                      - text: member12@example.com
+                - cell "BRONZE" [ref=e344]:
+                  - generic [ref=e345]: BRONZE
+                - cell "3회" [ref=e346]
+                - cell "₩672,702" [ref=e347]
+                - cell "6,727P" [ref=e348]
+                - cell "2023-02-06" [ref=e349]
+                - cell "탈퇴" [ref=e350]:
+                  - generic [ref=e351]: 탈퇴
+              - row "회원13 member13@example.com BRONZE 2회 ₩250,438 2,504P 2020-08-30 정상" [ref=e352]:
+                - cell "회원13 member13@example.com" [ref=e353]:
+                  - generic [ref=e355]:
+                    - generic [ref=e356]: 회원13
+                    - generic [ref=e357]:
+                      - img [ref=e358]
+                      - text: member13@example.com
+                - cell "BRONZE" [ref=e361]:
+                  - generic [ref=e362]: BRONZE
+                - cell "2회" [ref=e363]
+                - cell "₩250,438" [ref=e364]
+                - cell "2,504P" [ref=e365]
+                - cell "2020-08-30" [ref=e366]
+                - cell "정상" [ref=e367]:
+                  - generic [ref=e368]: 정상
+              - row "회원14 member14@example.com GOLD 33회 ₩6,072,891 60,728P 2023-11-08 정상" [ref=e369]:
+                - cell "회원14 member14@example.com" [ref=e370]:
+                  - generic [ref=e372]:
+                    - generic [ref=e373]: 회원14
+                    - generic [ref=e374]:
+                      - img [ref=e375]
+                      - text: member14@example.com
+                - cell "GOLD" [ref=e378]:
+                  - generic [ref=e379]: GOLD
+                - cell "33회" [ref=e380]
+                - cell "₩6,072,891" [ref=e381]
+                - cell "60,728P" [ref=e382]
+                - cell "2023-11-08" [ref=e383]
+                - cell "정상" [ref=e384]:
+                  - generic [ref=e385]: 정상
+              - row "회원15 member15@example.com BRONZE 4회 ₩661,004 6,610P 2022-07-05 휴면" [ref=e386]:
+                - cell "회원15 member15@example.com" [ref=e387]:
+                  - generic [ref=e389]:
+                    - generic [ref=e390]: 회원15
+                    - generic [ref=e391]:
+                      - img [ref=e392]
+                      - text: member15@example.com
+                - cell "BRONZE" [ref=e395]:
+                  - generic [ref=e396]: BRONZE
+                - cell "4회" [ref=e397]
+                - cell "₩661,004" [ref=e398]
+                - cell "6,610P" [ref=e399]
+                - cell "2022-07-05" [ref=e400]
+                - cell "휴면" [ref=e401]:
+                  - generic [ref=e402]: 휴면
+              - row "회원16 member16@example.com SILVER 19회 ₩3,099,413 30,994P 2021-03-21 정상" [ref=e403]:
+                - cell "회원16 member16@example.com" [ref=e404]:
+                  - generic [ref=e406]:
+                    - generic [ref=e407]: 회원16
+                    - generic [ref=e408]:
+                      - img [ref=e409]
+                      - text: member16@example.com
+                - cell "SILVER" [ref=e412]:
+                  - generic [ref=e413]: SILVER
+                - cell "19회" [ref=e414]
+                - cell "₩3,099,413" [ref=e415]
+                - cell "30,994P" [ref=e416]
+                - cell "2021-03-21" [ref=e417]
+                - cell "정상" [ref=e418]:
+                  - generic [ref=e419]: 정상
+              - row "회원17 member17@example.com BRONZE 1회 ₩313,775 3,137P 2021-06-20 정상" [ref=e420]:
+                - cell "회원17 member17@example.com" [ref=e421]:
+                  - generic [ref=e423]:
+                    - generic [ref=e424]: 회원17
+                    - generic [ref=e425]:
+                      - img [ref=e426]
+                      - text: member17@example.com
+                - cell "BRONZE" [ref=e429]:
+                  - generic [ref=e430]: BRONZE
+                - cell "1회" [ref=e431]
+                - cell "₩313,775" [ref=e432]
+                - cell "3,137P" [ref=e433]
+                - cell "2021-06-20" [ref=e434]
+                - cell "정상" [ref=e435]:
+                  - generic [ref=e436]: 정상
+              - row "회원18 member18@example.com SILVER 13회 ₩4,525,092 45,250P 2024-10-21 정상" [ref=e437]:
+                - cell "회원18 member18@example.com" [ref=e438]:
+                  - generic [ref=e440]:
+                    - generic [ref=e441]: 회원18
+                    - generic [ref=e442]:
+                      - img [ref=e443]
+                      - text: member18@example.com
+                - cell "SILVER" [ref=e446]:
+                  - generic [ref=e447]: SILVER
+                - cell "13회" [ref=e448]
+                - cell "₩4,525,092" [ref=e449]
+                - cell "45,250P" [ref=e450]
+                - cell "2024-10-21" [ref=e451]
+                - cell "정상" [ref=e452]:
+                  - generic [ref=e453]: 정상
+              - row "회원19 member19@example.com GOLD 42회 ₩10,174,038 101,740P 2024-02-25 정상" [ref=e454]:
+                - cell "회원19 member19@example.com" [ref=e455]:
+                  - generic [ref=e457]:
+                    - generic [ref=e458]: 회원19
+                    - generic [ref=e459]:
+                      - img [ref=e460]
+                      - text: member19@example.com
+                - cell "GOLD" [ref=e463]:
+                  - generic [ref=e464]: GOLD
+                - cell "42회" [ref=e465]
+                - cell "₩10,174,038" [ref=e466]
+                - cell "101,740P" [ref=e467]
+                - cell "2024-02-25" [ref=e468]
+                - cell "정상" [ref=e469]:
+                  - generic [ref=e470]: 정상
+              - row "회원20 member20@example.com BRONZE 3회 ₩1,149,729 11,497P 2022-05-17 휴면" [ref=e471]:
+                - cell "회원20 member20@example.com" [ref=e472]:
+                  - generic [ref=e474]:
+                    - generic [ref=e475]: 회원20
+                    - generic [ref=e476]:
+                      - img [ref=e477]
+                      - text: member20@example.com
+                - cell "BRONZE" [ref=e480]:
+                  - generic [ref=e481]: BRONZE
+                - cell "3회" [ref=e482]
+                - cell "₩1,149,729" [ref=e483]
+                - cell "11,497P" [ref=e484]
+                - cell "2022-05-17" [ref=e485]
+                - cell "휴면" [ref=e486]:
+                  - generic [ref=e487]: 휴면
+  - region "Notifications alt+T"
+  - generic:
+    - generic [ref=e490] [cursor=pointer]:
+      - img [ref=e491]
+      - generic [ref=e493]: 1 error
+      - button "Hide Errors" [ref=e494]:
+        - img [ref=e495]
+    - status [ref=e498]:
+      - generic [ref=e499]:
+        - img [ref=e501]
+        - generic [ref=e503]:
+          - text: Static route
+          - button "Hide static indicator" [ref=e504] [cursor=pointer]:
+            - img [ref=e505]
+  - alert [ref=e508]
+```

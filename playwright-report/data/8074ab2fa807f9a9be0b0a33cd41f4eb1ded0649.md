@@ -1,0 +1,261 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "Trenvl 관리자" [ref=e5] [cursor=pointer]:
+        - /url: /dashboard
+        - heading "Trenvl" [level=1] [ref=e6]
+        - paragraph [ref=e7]: 관리자
+      - navigation [ref=e8]:
+        - generic [ref=e9]:
+          - link "대시보드" [ref=e10] [cursor=pointer]:
+            - /url: /dashboard
+            - img [ref=e12]
+            - text: 대시보드
+          - heading "상품 관리" [level=3] [ref=e18]:
+            - button "상품 관리" [ref=e19] [cursor=pointer]:
+              - generic [ref=e20]:
+                - img [ref=e22]
+                - generic [ref=e26]: 상품 관리
+              - img [ref=e27]
+          - heading "예약 관리" [level=3] [ref=e30]:
+            - button "예약 관리" [ref=e31] [cursor=pointer]:
+              - generic [ref=e32]:
+                - img [ref=e34]
+                - generic [ref=e36]: 예약 관리
+              - img [ref=e37]
+          - heading "회원 관리" [level=3] [ref=e40]:
+            - button "회원 관리" [ref=e41] [cursor=pointer]:
+              - generic [ref=e42]:
+                - img [ref=e44]
+                - generic [ref=e49]: 회원 관리
+              - img [ref=e50]
+          - heading "주문 관리" [level=3] [ref=e53]:
+            - button "주문 관리" [ref=e54] [cursor=pointer]:
+              - generic [ref=e55]:
+                - img [ref=e57]
+                - generic [ref=e61]: 주문 관리
+              - img [ref=e62]
+          - heading "게시판 관리" [level=3] [ref=e65]:
+            - button "게시판 관리" [ref=e66] [cursor=pointer]:
+              - generic [ref=e67]:
+                - img [ref=e69]
+                - generic [ref=e72]: 게시판 관리
+              - img [ref=e73]
+          - link "리뷰 관리" [ref=e75] [cursor=pointer]:
+            - /url: /reviews
+            - img [ref=e77]
+            - text: 리뷰 관리
+          - heading "통계" [level=3] [ref=e80]:
+            - button "통계" [ref=e81] [cursor=pointer]:
+              - generic [ref=e82]:
+                - img [ref=e84]
+                - generic [ref=e86]: 통계
+              - img [ref=e87]
+          - heading "설정" [level=3] [ref=e90]:
+            - button "설정" [ref=e91] [cursor=pointer]:
+              - generic [ref=e92]:
+                - img [ref=e94]
+                - generic [ref=e97]: 설정
+              - img [ref=e98]
+    - generic [ref=e100]:
+      - banner [ref=e101]:
+        - heading "관리자 대시보드" [level=2] [ref=e103]
+        - generic [ref=e104]:
+          - button [ref=e105] [cursor=pointer]:
+            - img
+          - button "관리자 admin@trenvl.com" [ref=e107] [cursor=pointer]:
+            - generic [ref=e108]:
+              - img
+            - generic [ref=e109]:
+              - paragraph [ref=e110]: 관리자
+              - paragraph [ref=e111]: admin@trenvl.com
+      - main [ref=e112]:
+        - generic [ref=e113]:
+          - generic [ref=e114]:
+            - generic [ref=e115]:
+              - heading "공지사항" [level=1] [ref=e116]
+              - paragraph [ref=e117]: 총 15개의 공지사항
+            - button "공지사항 작성" [ref=e118] [cursor=pointer]:
+              - img
+              - text: 공지사항 작성
+          - generic [ref=e120]:
+            - img [ref=e121]
+            - textbox "제목 검색" [ref=e124]
+          - table [ref=e127]:
+            - rowgroup [ref=e128]:
+              - row "번호 제목 작성자 작성일 조회수" [ref=e129]:
+                - cell "번호" [ref=e130]
+                - cell "제목" [ref=e131]
+                - cell "작성자" [ref=e132]
+                - cell "작성일" [ref=e133]
+                - cell "조회수" [ref=e134]
+            - rowgroup [ref=e135]:
+              - row "NOTICE-001 중요 [중요] 시스템 점검 안내 1 관리자 2025-10-28 442" [ref=e136] [cursor=pointer]:
+                - cell "NOTICE-001" [ref=e137]
+                - cell "중요 [중요] 시스템 점검 안내 1" [ref=e138]:
+                  - generic [ref=e139]:
+                    - generic [ref=e140]: 중요
+                    - generic [ref=e141]: "[중요] 시스템 점검 안내 1"
+                - cell "관리자" [ref=e142]
+                - cell "2025-10-28" [ref=e143]
+                - cell "442" [ref=e144]:
+                  - generic [ref=e145]:
+                    - img [ref=e146]
+                    - text: "442"
+              - row "NOTICE-002 중요 [중요] 시스템 점검 안내 2 관리자 2025-10-27 448" [ref=e149] [cursor=pointer]:
+                - cell "NOTICE-002" [ref=e150]
+                - cell "중요 [중요] 시스템 점검 안내 2" [ref=e151]:
+                  - generic [ref=e152]:
+                    - generic [ref=e153]: 중요
+                    - generic [ref=e154]: "[중요] 시스템 점검 안내 2"
+                - cell "관리자" [ref=e155]
+                - cell "2025-10-27" [ref=e156]
+                - cell "448" [ref=e157]:
+                  - generic [ref=e158]:
+                    - img [ref=e159]
+                    - text: "448"
+              - row "NOTICE-003 중요 [중요] 시스템 점검 안내 3 관리자 2025-10-26 223" [ref=e162] [cursor=pointer]:
+                - cell "NOTICE-003" [ref=e163]
+                - cell "중요 [중요] 시스템 점검 안내 3" [ref=e164]:
+                  - generic [ref=e165]:
+                    - generic [ref=e166]: 중요
+                    - generic [ref=e167]: "[중요] 시스템 점검 안내 3"
+                - cell "관리자" [ref=e168]
+                - cell "2025-10-26" [ref=e169]
+                - cell "223" [ref=e170]:
+                  - generic [ref=e171]:
+                    - img [ref=e172]
+                    - text: "223"
+              - row "NOTICE-004 공지사항 제목 4 관리자 2025-10-25 209" [ref=e175] [cursor=pointer]:
+                - cell "NOTICE-004" [ref=e176]
+                - cell "공지사항 제목 4" [ref=e177]:
+                  - generic [ref=e179]: 공지사항 제목 4
+                - cell "관리자" [ref=e180]
+                - cell "2025-10-25" [ref=e181]
+                - cell "209" [ref=e182]:
+                  - generic [ref=e183]:
+                    - img [ref=e184]
+                    - text: "209"
+              - row "NOTICE-005 공지사항 제목 5 관리자 2025-10-24 126" [ref=e187] [cursor=pointer]:
+                - cell "NOTICE-005" [ref=e188]
+                - cell "공지사항 제목 5" [ref=e189]:
+                  - generic [ref=e191]: 공지사항 제목 5
+                - cell "관리자" [ref=e192]
+                - cell "2025-10-24" [ref=e193]
+                - cell "126" [ref=e194]:
+                  - generic [ref=e195]:
+                    - img [ref=e196]
+                    - text: "126"
+              - row "NOTICE-006 공지사항 제목 6 관리자 2025-10-23 471" [ref=e199] [cursor=pointer]:
+                - cell "NOTICE-006" [ref=e200]
+                - cell "공지사항 제목 6" [ref=e201]:
+                  - generic [ref=e203]: 공지사항 제목 6
+                - cell "관리자" [ref=e204]
+                - cell "2025-10-23" [ref=e205]
+                - cell "471" [ref=e206]:
+                  - generic [ref=e207]:
+                    - img [ref=e208]
+                    - text: "471"
+              - row "NOTICE-007 공지사항 제목 7 관리자 2025-10-22 36" [ref=e211] [cursor=pointer]:
+                - cell "NOTICE-007" [ref=e212]
+                - cell "공지사항 제목 7" [ref=e213]:
+                  - generic [ref=e215]: 공지사항 제목 7
+                - cell "관리자" [ref=e216]
+                - cell "2025-10-22" [ref=e217]
+                - cell "36" [ref=e218]:
+                  - generic [ref=e219]:
+                    - img [ref=e220]
+                    - text: "36"
+              - row "NOTICE-008 공지사항 제목 8 관리자 2025-10-21 17" [ref=e223] [cursor=pointer]:
+                - cell "NOTICE-008" [ref=e224]
+                - cell "공지사항 제목 8" [ref=e225]:
+                  - generic [ref=e227]: 공지사항 제목 8
+                - cell "관리자" [ref=e228]
+                - cell "2025-10-21" [ref=e229]
+                - cell "17" [ref=e230]:
+                  - generic [ref=e231]:
+                    - img [ref=e232]
+                    - text: "17"
+              - row "NOTICE-009 공지사항 제목 9 관리자 2025-10-20 7" [ref=e235] [cursor=pointer]:
+                - cell "NOTICE-009" [ref=e236]
+                - cell "공지사항 제목 9" [ref=e237]:
+                  - generic [ref=e239]: 공지사항 제목 9
+                - cell "관리자" [ref=e240]
+                - cell "2025-10-20" [ref=e241]
+                - cell "7" [ref=e242]:
+                  - generic [ref=e243]:
+                    - img [ref=e244]
+                    - text: "7"
+              - row "NOTICE-010 공지사항 제목 10 관리자 2025-10-19 342" [ref=e247] [cursor=pointer]:
+                - cell "NOTICE-010" [ref=e248]
+                - cell "공지사항 제목 10" [ref=e249]:
+                  - generic [ref=e251]: 공지사항 제목 10
+                - cell "관리자" [ref=e252]
+                - cell "2025-10-19" [ref=e253]
+                - cell "342" [ref=e254]:
+                  - generic [ref=e255]:
+                    - img [ref=e256]
+                    - text: "342"
+              - row "NOTICE-011 공지사항 제목 11 관리자 2025-10-18 426" [ref=e259] [cursor=pointer]:
+                - cell "NOTICE-011" [ref=e260]
+                - cell "공지사항 제목 11" [ref=e261]:
+                  - generic [ref=e263]: 공지사항 제목 11
+                - cell "관리자" [ref=e264]
+                - cell "2025-10-18" [ref=e265]
+                - cell "426" [ref=e266]:
+                  - generic [ref=e267]:
+                    - img [ref=e268]
+                    - text: "426"
+              - row "NOTICE-012 공지사항 제목 12 관리자 2025-10-17 306" [ref=e271] [cursor=pointer]:
+                - cell "NOTICE-012" [ref=e272]
+                - cell "공지사항 제목 12" [ref=e273]:
+                  - generic [ref=e275]: 공지사항 제목 12
+                - cell "관리자" [ref=e276]
+                - cell "2025-10-17" [ref=e277]
+                - cell "306" [ref=e278]:
+                  - generic [ref=e279]:
+                    - img [ref=e280]
+                    - text: "306"
+              - row "NOTICE-013 공지사항 제목 13 관리자 2025-10-16 430" [ref=e283] [cursor=pointer]:
+                - cell "NOTICE-013" [ref=e284]
+                - cell "공지사항 제목 13" [ref=e285]:
+                  - generic [ref=e287]: 공지사항 제목 13
+                - cell "관리자" [ref=e288]
+                - cell "2025-10-16" [ref=e289]
+                - cell "430" [ref=e290]:
+                  - generic [ref=e291]:
+                    - img [ref=e292]
+                    - text: "430"
+              - row "NOTICE-014 공지사항 제목 14 관리자 2025-10-15 289" [ref=e295] [cursor=pointer]:
+                - cell "NOTICE-014" [ref=e296]
+                - cell "공지사항 제목 14" [ref=e297]:
+                  - generic [ref=e299]: 공지사항 제목 14
+                - cell "관리자" [ref=e300]
+                - cell "2025-10-15" [ref=e301]
+                - cell "289" [ref=e302]:
+                  - generic [ref=e303]:
+                    - img [ref=e304]
+                    - text: "289"
+              - row "NOTICE-015 공지사항 제목 15 관리자 2025-10-14 81" [ref=e307] [cursor=pointer]:
+                - cell "NOTICE-015" [ref=e308]
+                - cell "공지사항 제목 15" [ref=e309]:
+                  - generic [ref=e311]: 공지사항 제목 15
+                - cell "관리자" [ref=e312]
+                - cell "2025-10-14" [ref=e313]
+                - cell "81" [ref=e314]:
+                  - generic [ref=e315]:
+                    - img [ref=e316]
+                    - text: "81"
+  - region "Notifications alt+T"
+  - status [ref=e319]:
+    - generic [ref=e320]:
+      - img [ref=e322]
+      - generic [ref=e324]:
+        - text: Static route
+        - button "Hide static indicator" [ref=e325] [cursor=pointer]:
+          - img [ref=e326]
+  - alert [ref=e329]
+```

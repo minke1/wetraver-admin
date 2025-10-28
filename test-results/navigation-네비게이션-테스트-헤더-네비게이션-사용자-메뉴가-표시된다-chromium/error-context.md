@@ -1,0 +1,257 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "Trenvl 관리자" [ref=e5] [cursor=pointer]:
+        - /url: /dashboard
+        - heading "Trenvl" [level=1] [ref=e6]
+        - paragraph [ref=e7]: 관리자
+      - navigation [ref=e8]:
+        - generic [ref=e9]:
+          - link "대시보드" [ref=e10] [cursor=pointer]:
+            - /url: /dashboard
+            - img [ref=e12]
+            - text: 대시보드
+          - heading "상품 관리" [level=3] [ref=e18]:
+            - button "상품 관리" [ref=e19] [cursor=pointer]:
+              - generic [ref=e20]:
+                - img [ref=e22]
+                - generic [ref=e26]: 상품 관리
+              - img [ref=e27]
+          - heading "예약 관리" [level=3] [ref=e30]:
+            - button "예약 관리" [ref=e31] [cursor=pointer]:
+              - generic [ref=e32]:
+                - img [ref=e34]
+                - generic [ref=e36]: 예약 관리
+              - img [ref=e37]
+          - heading "회원 관리" [level=3] [ref=e40]:
+            - button "회원 관리" [ref=e41] [cursor=pointer]:
+              - generic [ref=e42]:
+                - img [ref=e44]
+                - generic [ref=e49]: 회원 관리
+              - img [ref=e50]
+          - heading "주문 관리" [level=3] [ref=e53]:
+            - button "주문 관리" [ref=e54] [cursor=pointer]:
+              - generic [ref=e55]:
+                - img [ref=e57]
+                - generic [ref=e61]: 주문 관리
+              - img [ref=e62]
+          - heading "게시판 관리" [level=3] [ref=e65]:
+            - button "게시판 관리" [ref=e66] [cursor=pointer]:
+              - generic [ref=e67]:
+                - img [ref=e69]
+                - generic [ref=e72]: 게시판 관리
+              - img [ref=e73]
+          - link "리뷰 관리" [ref=e75] [cursor=pointer]:
+            - /url: /reviews
+            - img [ref=e77]
+            - text: 리뷰 관리
+          - heading "통계" [level=3] [ref=e80]:
+            - button "통계" [ref=e81] [cursor=pointer]:
+              - generic [ref=e82]:
+                - img [ref=e84]
+                - generic [ref=e86]: 통계
+              - img [ref=e87]
+          - heading "설정" [level=3] [ref=e90]:
+            - button "설정" [ref=e91] [cursor=pointer]:
+              - generic [ref=e92]:
+                - img [ref=e94]
+                - generic [ref=e97]: 설정
+              - img [ref=e98]
+    - generic [ref=e100]:
+      - banner [ref=e101]:
+        - heading "관리자 대시보드" [level=2] [ref=e103]
+        - generic [ref=e104]:
+          - button [ref=e105] [cursor=pointer]:
+            - img
+          - button "관리자 admin@trenvl.com" [ref=e107] [cursor=pointer]:
+            - generic [ref=e108]:
+              - img
+            - generic [ref=e109]:
+              - paragraph [ref=e110]: 관리자
+              - paragraph [ref=e111]: admin@trenvl.com
+      - main [ref=e112]:
+        - generic [ref=e113]:
+          - generic [ref=e114]:
+            - heading "대시보드" [level=1] [ref=e115]
+            - paragraph [ref=e116]: 전체 시스템 현황을 한눈에 확인하세요
+          - generic [ref=e117]:
+            - generic [ref=e118]:
+              - generic [ref=e119]:
+                - generic [ref=e120]:
+                  - paragraph [ref=e121]: 총 매출
+                  - heading "₩13.1M" [level=3] [ref=e122]
+                - img [ref=e124]
+              - generic [ref=e126]:
+                - img [ref=e127]
+                - generic [ref=e130]: 12.5%
+                - generic [ref=e131]: 지난달 대비
+            - generic [ref=e132]:
+              - generic [ref=e133]:
+                - generic [ref=e134]:
+                  - paragraph [ref=e135]: 총 주문
+                  - heading "37" [level=3] [ref=e136]
+                - img [ref=e138]
+              - generic [ref=e142]:
+                - img [ref=e143]
+                - generic [ref=e146]: 8.3%
+                - generic [ref=e147]: 지난달 대비
+            - generic [ref=e148]:
+              - generic [ref=e149]:
+                - generic [ref=e150]:
+                  - paragraph [ref=e151]: 총 회원
+                  - heading "200" [level=3] [ref=e152]
+                - img [ref=e154]
+              - generic [ref=e159]:
+                - img [ref=e160]
+                - generic [ref=e163]: 15.2%
+                - generic [ref=e164]: 지난달 대비
+            - generic [ref=e165]:
+              - generic [ref=e166]:
+                - generic [ref=e167]:
+                  - paragraph [ref=e168]: 활성 상품
+                  - heading "66" [level=3] [ref=e169]
+                - img [ref=e171]
+              - generic [ref=e175]:
+                - img [ref=e176]
+                - generic [ref=e179]: 5.7%
+                - generic [ref=e180]: 지난달 대비
+          - generic [ref=e181]:
+            - generic [ref=e182]:
+              - heading "일별 매출 추이" [level=2] [ref=e183]
+              - generic [ref=e185]:
+                - generic:
+                  - status:
+                    - paragraph: 2025-10-21
+                    - list:
+                      - listitem: "매출 : ₩0"
+                - application [ref=e186]:
+                  - generic [ref=e191]:
+                    - generic [ref=e193]: 09/30
+                    - generic [ref=e195]: 10/03
+                    - generic [ref=e197]: 10/06
+                    - generic [ref=e199]: 10/09
+                    - generic [ref=e201]: 10/12
+                    - generic [ref=e203]: 10/15
+                    - generic [ref=e205]: 10/18
+                    - generic [ref=e207]: 10/21
+                    - generic [ref=e209]: 10/24
+                    - generic [ref=e211]: 10/28
+                  - generic [ref=e213]:
+                    - generic [ref=e215]: "0"
+                    - generic [ref=e217]: "1"
+                    - generic [ref=e219]: "2"
+                    - generic [ref=e221]: "3"
+                    - generic [ref=e223]: "4"
+            - generic [ref=e224]:
+              - heading "상품별 판매 현황 (Top 5)" [level=2] [ref=e225]
+              - application [ref=e228]
+          - generic [ref=e241]:
+            - heading "최근 예약" [level=2] [ref=e243]
+            - table [ref=e245]:
+              - rowgroup [ref=e246]:
+                - row "예약번호 상품명 예약자 여행일 상태 금액" [ref=e247]:
+                  - cell "예약번호" [ref=e248]
+                  - cell "상품명" [ref=e249]
+                  - cell "예약자" [ref=e250]
+                  - cell "여행일" [ref=e251]
+                  - cell "상태" [ref=e252]
+                  - cell "금액" [ref=e253]
+              - rowgroup [ref=e254]:
+                - row "RES-2024-00083 경주 역사탐방 홍길동33 2024-06-25 결제대기 ₩372,752" [ref=e255]:
+                  - cell "RES-2024-00083" [ref=e256]
+                  - cell "경주 역사탐방" [ref=e257]
+                  - cell "홍길동33" [ref=e258]
+                  - cell "2024-06-25" [ref=e259]
+                  - cell "결제대기" [ref=e260]:
+                    - generic [ref=e261]: 결제대기
+                  - cell "₩372,752" [ref=e262]
+                - row "RES-2024-00062 인천 차이나타운 홍길동12 2024-10-06 결제대기 ₩108,028" [ref=e263]:
+                  - cell "RES-2024-00062" [ref=e264]
+                  - cell "인천 차이나타운" [ref=e265]
+                  - cell "홍길동12" [ref=e266]
+                  - cell "2024-10-06" [ref=e267]
+                  - cell "결제대기" [ref=e268]:
+                    - generic [ref=e269]: 결제대기
+                  - cell "₩108,028" [ref=e270]
+                - row "RES-2024-00018 여수 밤바다 투어 홍길동18 2024-08-08 결제대기 ₩561,376" [ref=e271]:
+                  - cell "RES-2024-00018" [ref=e272]
+                  - cell "여수 밤바다 투어" [ref=e273]
+                  - cell "홍길동18" [ref=e274]
+                  - cell "2024-08-08" [ref=e275]
+                  - cell "결제대기" [ref=e276]:
+                    - generic [ref=e277]: 결제대기
+                  - cell "₩561,376" [ref=e278]
+                - row "RES-2024-00079 인천 차이나타운 홍길동29 2025-03-25 취소 ₩572,525" [ref=e279]:
+                  - cell "RES-2024-00079" [ref=e280]
+                  - cell "인천 차이나타운" [ref=e281]
+                  - cell "홍길동29" [ref=e282]
+                  - cell "2025-03-25" [ref=e283]
+                  - cell "취소" [ref=e284]:
+                    - generic [ref=e285]: 취소
+                  - cell "₩572,525" [ref=e286]
+                - row "RES-2024-00052 여수 밤바다 투어 홍길동2 2025-04-11 취소 ₩127,068" [ref=e287]:
+                  - cell "RES-2024-00052" [ref=e288]
+                  - cell "여수 밤바다 투어" [ref=e289]
+                  - cell "홍길동2" [ref=e290]
+                  - cell "2025-04-11" [ref=e291]
+                  - cell "취소" [ref=e292]:
+                    - generic [ref=e293]: 취소
+                  - cell "₩127,068" [ref=e294]
+                - row "RES-2024-00101 대구 팔공산 홍길동1 2024-11-06 예약완료 ₩364,577" [ref=e295]:
+                  - cell "RES-2024-00101" [ref=e296]
+                  - cell "대구 팔공산" [ref=e297]
+                  - cell "홍길동1" [ref=e298]
+                  - cell "2024-11-06" [ref=e299]
+                  - cell "예약완료" [ref=e300]:
+                    - generic [ref=e301]: 예약완료
+                  - cell "₩364,577" [ref=e302]
+                - row "RES-2024-00072 속초 해변 휴양 홍길동22 2025-02-07 취소 ₩524,229" [ref=e303]:
+                  - cell "RES-2024-00072" [ref=e304]
+                  - cell "속초 해변 휴양" [ref=e305]
+                  - cell "홍길동22" [ref=e306]
+                  - cell "2025-02-07" [ref=e307]
+                  - cell "취소" [ref=e308]:
+                    - generic [ref=e309]: 취소
+                  - cell "₩524,229" [ref=e310]
+                - row "RES-2024-00116 설악산 트레킹 홍길동16 2024-07-26 취소 ₩500,916" [ref=e311]:
+                  - cell "RES-2024-00116" [ref=e312]
+                  - cell "설악산 트레킹" [ref=e313]
+                  - cell "홍길동16" [ref=e314]
+                  - cell "2024-07-26" [ref=e315]
+                  - cell "취소" [ref=e316]:
+                    - generic [ref=e317]: 취소
+                  - cell "₩500,916" [ref=e318]
+                - row "RES-2024-00024 제주도 3박4일 패키지 홍길동24 2025-06-01 결제대기 ₩371,765" [ref=e319]:
+                  - cell "RES-2024-00024" [ref=e320]
+                  - cell "제주도 3박4일 패키지" [ref=e321]
+                  - cell "홍길동24" [ref=e322]
+                  - cell "2025-06-01" [ref=e323]
+                  - cell "결제대기" [ref=e324]:
+                    - generic [ref=e325]: 결제대기
+                  - cell "₩371,765" [ref=e326]
+                - row "RES-2024-00112 제주도 3박4일 패키지 홍길동12 2024-06-12 예약완료 ₩249,692" [ref=e327]:
+                  - cell "RES-2024-00112" [ref=e328]
+                  - cell "제주도 3박4일 패키지" [ref=e329]
+                  - cell "홍길동12" [ref=e330]
+                  - cell "2024-06-12" [ref=e331]
+                  - cell "예약완료" [ref=e332]:
+                    - generic [ref=e333]: 예약완료
+                  - cell "₩249,692" [ref=e334]
+  - region "Notifications alt+T":
+    - list:
+      - listitem [ref=e335]:
+        - img [ref=e337]
+        - generic [ref=e340]: 로그인 성공!
+  - status [ref=e341]:
+    - generic [ref=e342]:
+      - img [ref=e344]
+      - generic [ref=e346]:
+        - text: Static route
+        - button "Hide static indicator" [ref=e347] [cursor=pointer]:
+          - img [ref=e348]
+  - alert [ref=e351]
+  - generic [ref=e352]: "0"
+```

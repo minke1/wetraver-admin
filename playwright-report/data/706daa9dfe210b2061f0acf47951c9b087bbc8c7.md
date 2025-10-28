@@ -1,0 +1,188 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "Trenvl 관리자" [ref=e5] [cursor=pointer]:
+        - /url: /dashboard
+        - heading "Trenvl" [level=1] [ref=e6]
+        - paragraph [ref=e7]: 관리자
+      - navigation [ref=e8]:
+        - generic [ref=e9]:
+          - link "대시보드" [ref=e10] [cursor=pointer]:
+            - /url: /dashboard
+            - img [ref=e12]
+            - text: 대시보드
+          - heading "상품 관리" [level=3] [ref=e18]:
+            - button "상품 관리" [ref=e19] [cursor=pointer]:
+              - generic [ref=e20]:
+                - img [ref=e22]
+                - generic [ref=e26]: 상품 관리
+              - img [ref=e27]
+          - heading "예약 관리" [level=3] [ref=e30]:
+            - button "예약 관리" [ref=e31] [cursor=pointer]:
+              - generic [ref=e32]:
+                - img [ref=e34]
+                - generic [ref=e36]: 예약 관리
+              - img [ref=e37]
+          - heading "회원 관리" [level=3] [ref=e40]:
+            - button "회원 관리" [ref=e41] [cursor=pointer]:
+              - generic [ref=e42]:
+                - img [ref=e44]
+                - generic [ref=e49]: 회원 관리
+              - img [ref=e50]
+          - heading "주문 관리" [level=3] [ref=e53]:
+            - button "주문 관리" [ref=e54] [cursor=pointer]:
+              - generic [ref=e55]:
+                - img [ref=e57]
+                - generic [ref=e61]: 주문 관리
+              - img [ref=e62]
+          - heading "게시판 관리" [level=3] [ref=e65]:
+            - button "게시판 관리" [ref=e66] [cursor=pointer]:
+              - generic [ref=e67]:
+                - img [ref=e69]
+                - generic [ref=e72]: 게시판 관리
+              - img [ref=e73]
+          - link "리뷰 관리" [ref=e75] [cursor=pointer]:
+            - /url: /reviews
+            - img [ref=e77]
+            - text: 리뷰 관리
+          - heading "통계" [level=3] [ref=e80]:
+            - button "통계" [ref=e81] [cursor=pointer]:
+              - generic [ref=e82]:
+                - img [ref=e84]
+                - generic [ref=e86]: 통계
+              - img [ref=e87]
+          - heading "설정" [level=3] [ref=e90]:
+            - button "설정" [ref=e91] [cursor=pointer]:
+              - generic [ref=e92]:
+                - img [ref=e94]
+                - generic [ref=e97]: 설정
+              - img [ref=e98]
+    - generic [ref=e100]:
+      - banner [ref=e101]:
+        - heading "관리자 대시보드" [level=2] [ref=e103]
+        - generic [ref=e104]:
+          - button [ref=e105] [cursor=pointer]:
+            - img
+          - button "관리자 admin@trenvl.com" [ref=e107] [cursor=pointer]:
+            - generic [ref=e108]:
+              - img
+            - generic [ref=e109]:
+              - paragraph [ref=e110]: 관리자
+              - paragraph [ref=e111]: admin@trenvl.com
+      - main [ref=e112]:
+        - generic [ref=e113]:
+          - generic [ref=e114]:
+            - heading "매출 통계" [level=1] [ref=e115]
+            - paragraph [ref=e116]: 최근 30일 매출 현황
+          - generic [ref=e117]:
+            - generic [ref=e118]:
+              - generic [ref=e119]:
+                - img [ref=e121]
+                - generic [ref=e123]:
+                  - paragraph [ref=e124]: 총 매출
+                  - heading "₩0.0M" [level=3] [ref=e125]
+              - generic [ref=e126]:
+                - img [ref=e127]
+                - generic [ref=e130]: 12.5%
+                - generic [ref=e131]: 전월 대비
+            - generic [ref=e132]:
+              - generic [ref=e133]:
+                - img [ref=e135]
+                - generic [ref=e138]:
+                  - paragraph [ref=e139]: 총 주문 수
+                  - heading "0" [level=3] [ref=e140]
+              - generic [ref=e141]:
+                - img [ref=e142]
+                - generic [ref=e145]: 8.3%
+                - generic [ref=e146]: 전월 대비
+            - generic [ref=e147]:
+              - generic [ref=e148]:
+                - img [ref=e150]
+                - generic [ref=e155]:
+                  - paragraph [ref=e156]: 평균 주문액
+                  - heading "₩NaN" [level=3] [ref=e157]
+              - generic [ref=e158]:
+                - img [ref=e159]
+                - generic [ref=e162]: 4.1%
+                - generic [ref=e163]: 전월 대비
+          - generic [ref=e164]:
+            - heading "일별 매출 및 주문 추이" [level=2] [ref=e165]
+            - generic [ref=e167]:
+              - generic:
+                - status:
+                  - paragraph: 2025-10-09
+                  - list:
+                    - listitem: "주문 : 0건"
+                    - listitem: "주문 : 0건"
+              - list [ref=e169]:
+                - listitem [ref=e170]:
+                  - img "매출 legend icon" [ref=e171]
+                  - text: 매출
+                - listitem [ref=e173]:
+                  - img "주문 legend icon" [ref=e174]
+                  - text: 주문
+              - application [ref=e176]:
+                - generic [ref=e181]:
+                  - generic [ref=e183]: 09/30
+                  - generic [ref=e185]: 10/02
+                  - generic [ref=e187]: 10/04
+                  - generic [ref=e189]: 10/06
+                  - generic [ref=e191]: 10/08
+                  - generic [ref=e193]: 10/10
+                  - generic [ref=e195]: 10/12
+                  - generic [ref=e197]: 10/14
+                  - generic [ref=e199]: 10/16
+                  - generic [ref=e201]: 10/18
+                  - generic [ref=e203]: 10/20
+                  - generic [ref=e205]: 10/22
+                  - generic [ref=e207]: 10/24
+                  - generic [ref=e209]: 10/26
+                  - generic [ref=e211]: 10/28
+                - generic [ref=e213]:
+                  - generic [ref=e215]: "0"
+                  - generic [ref=e217]: "1"
+                  - generic [ref=e219]: "2"
+                  - generic [ref=e221]: "3"
+                  - generic [ref=e223]: "4"
+                - generic [ref=e225]:
+                  - generic [ref=e227]: "0"
+                  - generic [ref=e229]: "1"
+                  - generic [ref=e231]: "2"
+                  - generic [ref=e233]: "3"
+                  - generic [ref=e235]: "4"
+          - generic [ref=e304]:
+            - generic [ref=e305]:
+              - heading "지역별 매출 (Top 5)" [level=2] [ref=e306]
+              - application [ref=e309]
+            - generic [ref=e313]:
+              - heading "회원등급별 분포" [level=2] [ref=e314]
+              - application [ref=e317]:
+                - generic [ref=e328]:
+                  - generic [ref=e330]: VIP (3.4%)
+                  - generic [ref=e332]: GOLD (11.3%)
+                  - generic [ref=e334]: SILVER (27.1%)
+                  - generic [ref=e336]: BRONZE (58.1%)
+          - generic [ref=e337]:
+            - heading "지역별 상세 통계" [level=2] [ref=e339]
+            - table [ref=e341]:
+              - rowgroup [ref=e342]:
+                - row "지역 주문 수 매출액 평균 주문액" [ref=e343]:
+                  - cell "지역" [ref=e344]
+                  - cell "주문 수" [ref=e345]
+                  - cell "매출액" [ref=e346]
+                  - cell "평균 주문액" [ref=e347]
+              - rowgroup
+  - region "Notifications alt+T"
+  - status [ref=e348]:
+    - generic [ref=e349]:
+      - img [ref=e351]
+      - generic [ref=e353]:
+        - text: Static route
+        - button "Hide static indicator" [ref=e354] [cursor=pointer]:
+          - img [ref=e355]
+  - alert [ref=e358]
+  - generic [ref=e359]: "0"
+```

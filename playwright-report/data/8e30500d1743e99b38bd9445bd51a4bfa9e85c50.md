@@ -1,0 +1,398 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "Trenvl 관리자" [ref=e5] [cursor=pointer]:
+        - /url: /dashboard
+        - heading "Trenvl" [level=1] [ref=e6]
+        - paragraph [ref=e7]: 관리자
+      - navigation [ref=e8]:
+        - generic [ref=e9]:
+          - link "대시보드" [ref=e10] [cursor=pointer]:
+            - /url: /dashboard
+            - img [ref=e12]
+            - text: 대시보드
+          - heading "상품 관리" [level=3] [ref=e18]:
+            - button "상품 관리" [ref=e19] [cursor=pointer]:
+              - generic [ref=e20]:
+                - img [ref=e22]
+                - generic [ref=e26]: 상품 관리
+              - img [ref=e27]
+          - heading "예약 관리" [level=3] [ref=e30]:
+            - button "예약 관리" [ref=e31] [cursor=pointer]:
+              - generic [ref=e32]:
+                - img [ref=e34]
+                - generic [ref=e36]: 예약 관리
+              - img [ref=e37]
+          - heading "회원 관리" [level=3] [ref=e40]:
+            - button "회원 관리" [ref=e41] [cursor=pointer]:
+              - generic [ref=e42]:
+                - img [ref=e44]
+                - generic [ref=e49]: 회원 관리
+              - img [ref=e50]
+          - heading "주문 관리" [level=3] [ref=e53]:
+            - button "주문 관리" [ref=e54] [cursor=pointer]:
+              - generic [ref=e55]:
+                - img [ref=e57]
+                - generic [ref=e61]: 주문 관리
+              - img [ref=e62]
+          - heading "게시판 관리" [level=3] [ref=e65]:
+            - button "게시판 관리" [ref=e66] [cursor=pointer]:
+              - generic [ref=e67]:
+                - img [ref=e69]
+                - generic [ref=e72]: 게시판 관리
+              - img [ref=e73]
+          - link "리뷰 관리" [ref=e75] [cursor=pointer]:
+            - /url: /reviews
+            - img [ref=e77]
+            - text: 리뷰 관리
+          - heading "통계" [level=3] [ref=e80]:
+            - button "통계" [ref=e81] [cursor=pointer]:
+              - generic [ref=e82]:
+                - img [ref=e84]
+                - generic [ref=e86]: 통계
+              - img [ref=e87]
+          - heading "설정" [level=3] [ref=e90]:
+            - button "설정" [ref=e91] [cursor=pointer]:
+              - generic [ref=e92]:
+                - img [ref=e94]
+                - generic [ref=e97]: 설정
+              - img [ref=e98]
+    - generic [ref=e100]:
+      - banner [ref=e101]:
+        - heading "관리자 대시보드" [level=2] [ref=e103]
+        - generic [ref=e104]:
+          - button [ref=e105] [cursor=pointer]:
+            - img
+          - button "관리자 admin@trenvl.com" [ref=e107] [cursor=pointer]:
+            - generic [ref=e108]:
+              - img
+            - generic [ref=e109]:
+              - paragraph [ref=e110]: 관리자
+              - paragraph [ref=e111]: admin@trenvl.com
+      - main [ref=e112]:
+        - generic [ref=e113]:
+          - generic [ref=e114]:
+            - generic [ref=e115]:
+              - heading "상품 관리" [level=1] [ref=e116]
+              - paragraph [ref=e117]: 총 80개의 상품
+            - button "상품 등록" [ref=e118] [cursor=pointer]:
+              - img
+              - text: 상품 등록
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - img [ref=e121]
+              - heading "필터" [level=2] [ref=e123]
+            - generic [ref=e124]:
+              - generic [ref=e125]:
+                - img [ref=e126]
+                - textbox "상품명 검색" [ref=e129]
+              - combobox [ref=e130] [cursor=pointer]:
+                - generic: 전체
+                - img [ref=e131]
+              - combobox [ref=e133] [cursor=pointer]:
+                - generic: 전체
+                - img [ref=e134]
+              - button "초기화" [ref=e136] [cursor=pointer]
+          - table [ref=e139]:
+            - rowgroup [ref=e140]:
+              - row "상품명 카테고리 가격 재고 상태 판매수" [ref=e141]:
+                - cell [ref=e142]:
+                  - checkbox [ref=e143] [cursor=pointer]
+                - cell "상품명" [ref=e144]
+                - cell "카테고리" [ref=e145]
+                - cell "가격" [ref=e146]
+                - cell "재고" [ref=e147]
+                - cell "상태" [ref=e148]
+                - cell "판매수" [ref=e149]
+            - rowgroup [ref=e150]:
+              - row "강원 힐링 여행 강원 패키지 ₩186,435 28 판매중 117" [ref=e151]:
+                - cell [ref=e152]:
+                  - checkbox [ref=e153] [cursor=pointer]
+                - cell "강원 힐링 여행 강원" [ref=e154]:
+                  - generic [ref=e155]: 강원 힐링 여행
+                  - generic [ref=e156]: 강원
+                - cell "패키지" [ref=e157]
+                - cell "₩186,435" [ref=e158]:
+                  - generic [ref=e159]: ₩186,435
+                - cell "28" [ref=e160]
+                - cell "판매중" [ref=e161]:
+                  - generic [ref=e162]: 판매중
+                - cell "117" [ref=e163]
+              - row "서울 럭셔리 리조트 서울 패키지 ₩75,373 ₩94,217 29 판매중 40" [ref=e164]:
+                - cell [ref=e165]:
+                  - checkbox [ref=e166] [cursor=pointer]
+                - cell "서울 럭셔리 리조트 서울" [ref=e167]:
+                  - generic [ref=e168]: 서울 럭셔리 리조트
+                  - generic [ref=e169]: 서울
+                - cell "패키지" [ref=e170]
+                - cell "₩75,373 ₩94,217" [ref=e171]:
+                  - generic [ref=e172]: ₩75,373
+                  - generic [ref=e173]: ₩94,217
+                - cell "29" [ref=e174]
+                - cell "판매중" [ref=e175]:
+                  - generic [ref=e176]: 판매중
+                - cell "40" [ref=e177]
+              - row "대구 프리미엄 패키지 대구 액티비티 ₩370,020 ₩462,525 24 판매중 281" [ref=e178]:
+                - cell [ref=e179]:
+                  - checkbox [ref=e180] [cursor=pointer]
+                - cell "대구 프리미엄 패키지 대구" [ref=e181]:
+                  - generic [ref=e182]: 대구 프리미엄 패키지
+                  - generic [ref=e183]: 대구
+                - cell "액티비티" [ref=e184]
+                - cell "₩370,020 ₩462,525" [ref=e185]:
+                  - generic [ref=e186]: ₩370,020
+                  - generic [ref=e187]: ₩462,525
+                - cell "24" [ref=e188]
+                - cell "판매중" [ref=e189]:
+                  - generic [ref=e190]: 판매중
+                - cell "281" [ref=e191]
+              - row "대구 가족 여행 대구 입장권 ₩139,547 ₩174,434 58 판매중 304" [ref=e192]:
+                - cell [ref=e193]:
+                  - checkbox [ref=e194] [cursor=pointer]
+                - cell "대구 가족 여행 대구" [ref=e195]:
+                  - generic [ref=e196]: 대구 가족 여행
+                  - generic [ref=e197]: 대구
+                - cell "입장권" [ref=e198]
+                - cell "₩139,547 ₩174,434" [ref=e199]:
+                  - generic [ref=e200]: ₩139,547
+                  - generic [ref=e201]: ₩174,434
+                - cell "58" [ref=e202]
+                - cell "판매중" [ref=e203]:
+                  - generic [ref=e204]: 판매중
+                - cell "304" [ref=e205]
+              - row "서울 럭셔리 리조트 서울 액티비티 ₩365,459 ₩456,824 40 판매중 311" [ref=e206]:
+                - cell [ref=e207]:
+                  - checkbox [ref=e208] [cursor=pointer]
+                - cell "서울 럭셔리 리조트 서울" [ref=e209]:
+                  - generic [ref=e210]: 서울 럭셔리 리조트
+                  - generic [ref=e211]: 서울
+                - cell "액티비티" [ref=e212]
+                - cell "₩365,459 ₩456,824" [ref=e213]:
+                  - generic [ref=e214]: ₩365,459
+                  - generic [ref=e215]: ₩456,824
+                - cell "40" [ref=e216]
+                - cell "판매중" [ref=e217]:
+                  - generic [ref=e218]: 판매중
+                - cell "311" [ref=e219]
+              - row "서울 럭셔리 리조트 서울 렌터카 ₩401,595 50 판매중 63" [ref=e220]:
+                - cell [ref=e221]:
+                  - checkbox [ref=e222] [cursor=pointer]
+                - cell "서울 럭셔리 리조트 서울" [ref=e223]:
+                  - generic [ref=e224]: 서울 럭셔리 리조트
+                  - generic [ref=e225]: 서울
+                - cell "렌터카" [ref=e226]
+                - cell "₩401,595" [ref=e227]:
+                  - generic [ref=e228]: ₩401,595
+                - cell "50" [ref=e229]
+                - cell "판매중" [ref=e230]:
+                  - generic [ref=e231]: 판매중
+                - cell "63" [ref=e232]
+              - row "속초 럭셔리 리조트 속초 렌터카 ₩94,591 37 판매중 48" [ref=e233]:
+                - cell [ref=e234]:
+                  - checkbox [ref=e235] [cursor=pointer]
+                - cell "속초 럭셔리 리조트 속초" [ref=e236]:
+                  - generic [ref=e237]: 속초 럭셔리 리조트
+                  - generic [ref=e238]: 속초
+                - cell "렌터카" [ref=e239]
+                - cell "₩94,591" [ref=e240]:
+                  - generic [ref=e241]: ₩94,591
+                - cell "37" [ref=e242]
+                - cell "판매중" [ref=e243]:
+                  - generic [ref=e244]: 판매중
+                - cell "48" [ref=e245]
+              - row "대구 맛집 투어 대구 호텔/리조트 ₩181,853 ₩227,317 16 판매중 490" [ref=e246]:
+                - cell [ref=e247]:
+                  - checkbox [ref=e248] [cursor=pointer]
+                - cell "대구 맛집 투어 대구" [ref=e249]:
+                  - generic [ref=e250]: 대구 맛집 투어
+                  - generic [ref=e251]: 대구
+                - cell "호텔/리조트" [ref=e252]
+                - cell "₩181,853 ₩227,317" [ref=e253]:
+                  - generic [ref=e254]: ₩181,853
+                  - generic [ref=e255]: ₩227,317
+                - cell "16" [ref=e256]
+                - cell "판매중" [ref=e257]:
+                  - generic [ref=e258]: 판매중
+                - cell "490" [ref=e259]
+              - row "인천 럭셔리 리조트 인천 액티비티 ₩299,997 ₩374,997 46 판매중 155" [ref=e260]:
+                - cell [ref=e261]:
+                  - checkbox [ref=e262] [cursor=pointer]
+                - cell "인천 럭셔리 리조트 인천" [ref=e263]:
+                  - generic [ref=e264]: 인천 럭셔리 리조트
+                  - generic [ref=e265]: 인천
+                - cell "액티비티" [ref=e266]
+                - cell "₩299,997 ₩374,997" [ref=e267]:
+                  - generic [ref=e268]: ₩299,997
+                  - generic [ref=e269]: ₩374,997
+                - cell "46" [ref=e270]
+                - cell "판매중" [ref=e271]:
+                  - generic [ref=e272]: 판매중
+                - cell "155" [ref=e273]
+              - row "강원 맛집 투어 강원 입장권 ₩461,348 43 판매중 156" [ref=e274]:
+                - cell [ref=e275]:
+                  - checkbox [ref=e276] [cursor=pointer]
+                - cell "강원 맛집 투어 강원" [ref=e277]:
+                  - generic [ref=e278]: 강원 맛집 투어
+                  - generic [ref=e279]: 강원
+                - cell "입장권" [ref=e280]
+                - cell "₩461,348" [ref=e281]:
+                  - generic [ref=e282]: ₩461,348
+                - cell "43" [ref=e283]
+                - cell "판매중" [ref=e284]:
+                  - generic [ref=e285]: 판매중
+                - cell "156" [ref=e286]
+              - row "속초 맛집 투어 속초 호텔/리조트 ₩154,757 ₩193,447 47 판매중 204" [ref=e287]:
+                - cell [ref=e288]:
+                  - checkbox [ref=e289] [cursor=pointer]
+                - cell "속초 맛집 투어 속초" [ref=e290]:
+                  - generic [ref=e291]: 속초 맛집 투어
+                  - generic [ref=e292]: 속초
+                - cell "호텔/리조트" [ref=e293]
+                - cell "₩154,757 ₩193,447" [ref=e294]:
+                  - generic [ref=e295]: ₩154,757
+                  - generic [ref=e296]: ₩193,447
+                - cell "47" [ref=e297]
+                - cell "판매중" [ref=e298]:
+                  - generic [ref=e299]: 판매중
+                - cell "204" [ref=e300]
+              - row "부산 힐링 여행 부산 호텔/리조트 ₩424,913 ₩531,142 13 판매중 284" [ref=e301]:
+                - cell [ref=e302]:
+                  - checkbox [ref=e303] [cursor=pointer]
+                - cell "부산 힐링 여행 부산" [ref=e304]:
+                  - generic [ref=e305]: 부산 힐링 여행
+                  - generic [ref=e306]: 부산
+                - cell "호텔/리조트" [ref=e307]
+                - cell "₩424,913 ₩531,142" [ref=e308]:
+                  - generic [ref=e309]: ₩424,913
+                  - generic [ref=e310]: ₩531,142
+                - cell "13" [ref=e311]
+                - cell "판매중" [ref=e312]:
+                  - generic [ref=e313]: 판매중
+                - cell "284" [ref=e314]
+              - row "부산 가족 여행 부산 렌터카 ₩61,500 ₩76,875 13 판매중 247" [ref=e315]:
+                - cell [ref=e316]:
+                  - checkbox [ref=e317] [cursor=pointer]
+                - cell "부산 가족 여행 부산" [ref=e318]:
+                  - generic [ref=e319]: 부산 가족 여행
+                  - generic [ref=e320]: 부산
+                - cell "렌터카" [ref=e321]
+                - cell "₩61,500 ₩76,875" [ref=e322]:
+                  - generic [ref=e323]: ₩61,500
+                  - generic [ref=e324]: ₩76,875
+                - cell "13" [ref=e325]
+                - cell "판매중" [ref=e326]:
+                  - generic [ref=e327]: 판매중
+                - cell "247" [ref=e328]
+              - row "여수 프리미엄 패키지 여수 입장권 ₩253,929 17 판매중 335" [ref=e329]:
+                - cell [ref=e330]:
+                  - checkbox [ref=e331] [cursor=pointer]
+                - cell "여수 프리미엄 패키지 여수" [ref=e332]:
+                  - generic [ref=e333]: 여수 프리미엄 패키지
+                  - generic [ref=e334]: 여수
+                - cell "입장권" [ref=e335]
+                - cell "₩253,929" [ref=e336]:
+                  - generic [ref=e337]: ₩253,929
+                - cell "17" [ref=e338]
+                - cell "판매중" [ref=e339]:
+                  - generic [ref=e340]: 판매중
+                - cell "335" [ref=e341]
+              - row "속초 힐링 여행 속초 액티비티 ₩321,453 ₩401,817 52 판매중 94" [ref=e342]:
+                - cell [ref=e343]:
+                  - checkbox [ref=e344] [cursor=pointer]
+                - cell "속초 힐링 여행 속초" [ref=e345]:
+                  - generic [ref=e346]: 속초 힐링 여행
+                  - generic [ref=e347]: 속초
+                - cell "액티비티" [ref=e348]
+                - cell "₩321,453 ₩401,817" [ref=e349]:
+                  - generic [ref=e350]: ₩321,453
+                  - generic [ref=e351]: ₩401,817
+                - cell "52" [ref=e352]
+                - cell "판매중" [ref=e353]:
+                  - generic [ref=e354]: 판매중
+                - cell "94" [ref=e355]
+              - row "부산 가족 여행 부산 패키지 ₩192,816 31 판매중 332" [ref=e356]:
+                - cell [ref=e357]:
+                  - checkbox [ref=e358] [cursor=pointer]
+                - cell "부산 가족 여행 부산" [ref=e359]:
+                  - generic [ref=e360]: 부산 가족 여행
+                  - generic [ref=e361]: 부산
+                - cell "패키지" [ref=e362]
+                - cell "₩192,816" [ref=e363]:
+                  - generic [ref=e364]: ₩192,816
+                - cell "31" [ref=e365]
+                - cell "판매중" [ref=e366]:
+                  - generic [ref=e367]: 판매중
+                - cell "332" [ref=e368]
+              - row "강원 럭셔리 리조트 강원 액티비티 ₩173,260 51 판매중 341" [ref=e369]:
+                - cell [ref=e370]:
+                  - checkbox [ref=e371] [cursor=pointer]
+                - cell "강원 럭셔리 리조트 강원" [ref=e372]:
+                  - generic [ref=e373]: 강원 럭셔리 리조트
+                  - generic [ref=e374]: 강원
+                - cell "액티비티" [ref=e375]
+                - cell "₩173,260" [ref=e376]:
+                  - generic [ref=e377]: ₩173,260
+                - cell "51" [ref=e378]
+                - cell "판매중" [ref=e379]:
+                  - generic [ref=e380]: 판매중
+                - cell "341" [ref=e381]
+              - row "강원 럭셔리 리조트 강원 렌터카 ₩82,036 ₩102,546 56 판매중 274" [ref=e382]:
+                - cell [ref=e383]:
+                  - checkbox [ref=e384] [cursor=pointer]
+                - cell "강원 럭셔리 리조트 강원" [ref=e385]:
+                  - generic [ref=e386]: 강원 럭셔리 리조트
+                  - generic [ref=e387]: 강원
+                - cell "렌터카" [ref=e388]
+                - cell "₩82,036 ₩102,546" [ref=e389]:
+                  - generic [ref=e390]: ₩82,036
+                  - generic [ref=e391]: ₩102,546
+                - cell "56" [ref=e392]
+                - cell "판매중" [ref=e393]:
+                  - generic [ref=e394]: 판매중
+                - cell "274" [ref=e395]
+              - row "속초 프리미엄 패키지 속초 렌터카 ₩347,186 39 판매중 350" [ref=e396]:
+                - cell [ref=e397]:
+                  - checkbox [ref=e398] [cursor=pointer]
+                - cell "속초 프리미엄 패키지 속초" [ref=e399]:
+                  - generic [ref=e400]: 속초 프리미엄 패키지
+                  - generic [ref=e401]: 속초
+                - cell "렌터카" [ref=e402]
+                - cell "₩347,186" [ref=e403]:
+                  - generic [ref=e404]: ₩347,186
+                - cell "39" [ref=e405]
+                - cell "판매중" [ref=e406]:
+                  - generic [ref=e407]: 판매중
+                - cell "350" [ref=e408]
+              - row "부산 힐링 여행 부산 렌터카 ₩54,564 ₩68,205 16 판매중 499" [ref=e409]:
+                - cell [ref=e410]:
+                  - checkbox [ref=e411] [cursor=pointer]
+                - cell "부산 힐링 여행 부산" [ref=e412]:
+                  - generic [ref=e413]: 부산 힐링 여행
+                  - generic [ref=e414]: 부산
+                - cell "렌터카" [ref=e415]
+                - cell "₩54,564 ₩68,205" [ref=e416]:
+                  - generic [ref=e417]: ₩54,564
+                  - generic [ref=e418]: ₩68,205
+                - cell "16" [ref=e419]
+                - cell "판매중" [ref=e420]:
+                  - generic [ref=e421]: 판매중
+                - cell "499" [ref=e422]
+  - region "Notifications alt+T"
+  - generic:
+    - generic [ref=e425] [cursor=pointer]:
+      - img [ref=e426]
+      - generic [ref=e428]: 1 error
+      - button "Hide Errors" [ref=e429]:
+        - img [ref=e430]
+    - status [ref=e433]:
+      - generic [ref=e434]:
+        - img [ref=e436]
+        - generic [ref=e438]:
+          - text: Static route
+          - button "Hide static indicator" [ref=e439] [cursor=pointer]:
+            - img [ref=e440]
+  - alert [ref=e443]
+```
