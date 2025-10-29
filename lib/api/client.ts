@@ -18,7 +18,7 @@ export interface ApiResponse<T> {
   error?: {
     code: string;
     message: string;
-    details?: any;
+    details?: unknown;
   };
 }
 
@@ -45,7 +45,7 @@ export class ApiError extends Error {
     public status: number,
     public code: string,
     message: string,
-    public details?: any
+    public details?: unknown
   ) {
     super(message);
     this.name = 'ApiError';
@@ -115,7 +115,7 @@ export async function get<T>(endpoint: string): Promise<T> {
 /**
  * POST 요청
  */
-export async function post<T>(endpoint: string, data: any): Promise<T> {
+export async function post<T>(endpoint: string, data: unknown): Promise<T> {
   return apiClient<T>(endpoint, {
     method: 'POST',
     body: JSON.stringify(data),
@@ -125,7 +125,7 @@ export async function post<T>(endpoint: string, data: any): Promise<T> {
 /**
  * PUT 요청
  */
-export async function put<T>(endpoint: string, data: any): Promise<T> {
+export async function put<T>(endpoint: string, data: unknown): Promise<T> {
   return apiClient<T>(endpoint, {
     method: 'PUT',
     body: JSON.stringify(data),
@@ -142,7 +142,7 @@ export async function del<T>(endpoint: string): Promise<T> {
 /**
  * PATCH 요청
  */
-export async function patch<T>(endpoint: string, data: any): Promise<T> {
+export async function patch<T>(endpoint: string, data: unknown): Promise<T> {
   return apiClient<T>(endpoint, {
     method: 'PATCH',
     body: JSON.stringify(data),
