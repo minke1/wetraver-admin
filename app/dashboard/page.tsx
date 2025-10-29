@@ -1,15 +1,20 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import {
   getDashboardStats,
   getDailyRevenue,
   getProductSales,
   getRecentReservations,
-} from '@/lib/mock-data/dashboard';
+} from '@/lib/services/dashboardService';
+import { LoadingSpinner } from '@/components/ui/loading-spinner';
+import { ErrorMessage } from '@/components/ui/error-message';
 import { TrendingUp, TrendingDown, DollarSign, ShoppingCart, Users, Package } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { format } from 'date-fns';
+import { TravelReservation } from '@/types/reservation';
+import type { DashboardStats, DailyRevenue, ProductSales } from '@/lib/mock-data/dashboard';
 
 const COLORS = ['#2D7FF9', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#EC4899', '#06B6D4', '#84CC16'];
 
@@ -53,10 +58,59 @@ function StatCard({
 }
 
 export default function DashboardPage() {
-  const stats = getDashboardStats();
-  const dailyRevenue = getDailyRevenue();
-  const productSales = getProductSales();
-  const recentReservations = getRecentReservations();
+  // API 연동을 위한 상태
+  const [stats, setStats] = useState<DashboardStats | null>(null);
+  const [dailyRevenue, setDailyRevenue] = useState<DailyRevenue[]>([]);
+  const [productSales, setProductSales] = useState<ProductSales[]>([]);
+  const [recentReservations, setRecentReservations] = useState<TravelReservation[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+
+  // 데이터 로드
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  async function loadData() {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const [statsData, revenueData, salesData, reservationsData] = await Promise.all([
+        getDashboardStats(),
+        getDailyRevenue(),
+        getProductSales(),
+        getRecentReservations(),
+      ]);
+
+      setStats(statsData);
+      setDailyRevenue(revenueData);
+      setProductSales(salesData);
+      setRecentReservations(reservationsData);
+    } catch (err) {
+      setError(err as Error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // 로딩 처리
+  if (loading) {
+    return (
+      <DashboardLayout>
+        <LoadingSpinner />
+      </DashboardLayout>
+    );
+  }
+
+  // 에러 처리
+  if (error || !stats) {
+    return (
+      <DashboardLayout>
+        <ErrorMessage error={error || new Error('데이터를 불러올 수 없습니다.')} retry={loadData} />
+      </DashboardLayout>
+    );
+  }
 
   return (
     <DashboardLayout>
@@ -185,12 +239,12 @@ export default function DashboardPage() {
                       {reservation.customerName}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                      {reservation.travelDate}
+                      {reservation.checkIn || reservation.reservationDate}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
                         className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                          reservation.status === '예약완료'
+                          reservation.status === '결제완료' || reservation.status === '이용완료'
                             ? 'bg-success-100 text-success-800'
                             : reservation.status === '결제대기'
                             ? 'bg-warning-100 text-warning-800'
@@ -201,7 +255,7 @@ export default function DashboardPage() {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      ₩{reservation.amount.toLocaleString()}
+                      ₩{reservation.priceKRW.toLocaleString()}
                     </td>
                   </tr>
                 ))}

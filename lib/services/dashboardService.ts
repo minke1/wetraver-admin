@@ -5,27 +5,7 @@
 import { get } from '@/lib/api/client';
 import { ENDPOINTS } from '@/lib/api/endpoints';
 import type { TravelReservation } from '@/types/reservation';
-
-// Dashboard 타입 임시 정의
-interface DashboardStats {
-  totalRevenue: number;
-  totalReservations: number;
-  totalProducts: number;
-  totalMembers: number;
-  [key: string]: unknown;
-}
-
-interface DailyRevenue {
-  date: string;
-  revenue: number;
-  [key: string]: unknown;
-}
-
-interface ProductSales {
-  productName: string;
-  sales: number;
-  [key: string]: unknown;
-}
+import type { DashboardStats, DailyRevenue, ProductSales } from '@/lib/mock-data/dashboard';
 
 export async function getDashboardStats(): Promise<DashboardStats> {
   return get<DashboardStats>(ENDPOINTS.DASHBOARD.STATS);

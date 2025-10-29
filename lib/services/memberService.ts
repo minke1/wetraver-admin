@@ -5,17 +5,7 @@
 import { get, put } from '@/lib/api/client';
 import { ENDPOINTS } from '@/lib/api/endpoints';
 import type { PaginatedResponse } from '@/types/api';
-
-// Member 타입 임시 정의 (types/member.ts에 실제 정의되어 있어야 함)
-interface Member {
-  id: string;
-  name: string;
-  email: string;
-  grade: string;
-  status: string;
-  createdAt: string;
-  [key: string]: unknown;
-}
+import type { Member } from '@/lib/mock-data/members';
 
 interface MemberFilters {
   grade?: string;

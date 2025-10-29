@@ -1,16 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
-import { getProducts } from '@/lib/mock-data/products';
+import { getProducts } from '@/lib/services/productService';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
+import { LoadingSpinner } from '@/components/ui/loading-spinner';
+import { ErrorMessage } from '@/components/ui/error-message';
 import { Search, Plus, Filter, Edit2, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
 import Link from 'next/link';
 import Image from 'next/image';
+import type { Product } from '@/lib/mock-data/products';
 
 export default function ProductsPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -18,11 +21,39 @@ export default function ProductsPage() {
   const [status, setStatus] = useState('all');
   const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
 
-  const { data: products, total } = getProducts(1, 20, {
-    category: category !== 'all' ? category : undefined,
-    status: status !== 'all' ? status : undefined,
-    searchTerm: searchTerm || undefined,
-  });
+  // API 연동을 위한 상태
+  const [products, setProducts] = useState<Product[]>([]);
+  const [total, setTotal] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+  const [currentPage] = useState(1);
+  const [itemsPerPage] = useState(20);
+
+  // 데이터 로드
+  useEffect(() => {
+    loadData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPage, itemsPerPage, category, status, searchTerm]);
+
+  async function loadData() {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const data = await getProducts(currentPage, itemsPerPage, {
+        category: category !== 'all' ? category : undefined,
+        status: status !== 'all' ? status : undefined,
+        searchTerm: searchTerm || undefined,
+      });
+
+      setProducts(data.data);
+      setTotal(data.pagination.total);
+    } catch (err) {
+      setError(err as Error);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   const handleSelectAll = (checked: boolean) => {
     if (checked) {
@@ -48,6 +79,24 @@ export default function ProductsPage() {
     toast.success(`${selectedProducts.length}개 상품 ${action} 완료`);
     setSelectedProducts([]);
   };
+
+  // 로딩 처리
+  if (loading && !products.length) {
+    return (
+      <DashboardLayout>
+        <LoadingSpinner />
+      </DashboardLayout>
+    );
+  }
+
+  // 에러 처리
+  if (error) {
+    return (
+      <DashboardLayout>
+        <ErrorMessage error={error} retry={loadData} />
+      </DashboardLayout>
+    );
+  }
 
   return (
     <DashboardLayout>

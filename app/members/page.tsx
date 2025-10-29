@@ -1,24 +1,73 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
-import { getMembers } from '@/lib/mock-data/members';
+import { getMembers } from '@/lib/services/memberService';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { LoadingSpinner } from '@/components/ui/loading-spinner';
+import { ErrorMessage } from '@/components/ui/error-message';
 import { Search, Filter, Mail, Edit2, Trash2 } from 'lucide-react';
 import Link from 'next/link';
+import type { Member } from '@/lib/mock-data/members';
 
 export default function MembersPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [grade, setGrade] = useState('all');
   const [status, setStatus] = useState('all');
 
-  const { data: members, total } = getMembers(1, 20, {
-    grade: grade !== 'all' ? grade : undefined,
-    status: status !== 'all' ? status : undefined,
-    searchTerm: searchTerm || undefined,
-  });
+  // API 연동을 위한 상태
+  const [members, setMembers] = useState<Member[]>([]);
+  const [total, setTotal] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+  const [currentPage] = useState(1);
+  const [itemsPerPage] = useState(20);
+
+  // 데이터 로드
+  useEffect(() => {
+    loadData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPage, itemsPerPage, grade, status, searchTerm]);
+
+  async function loadData() {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const data = await getMembers(currentPage, itemsPerPage, {
+        grade: grade !== 'all' ? grade : undefined,
+        status: status !== 'all' ? status : undefined,
+        searchTerm: searchTerm || undefined,
+      });
+
+      setMembers(data.data);
+      setTotal(data.pagination.total);
+    } catch (err) {
+      setError(err as Error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // 로딩 처리
+  if (loading && !members.length) {
+    return (
+      <DashboardLayout>
+        <LoadingSpinner />
+      </DashboardLayout>
+    );
+  }
+
+  // 에러 처리
+  if (error) {
+    return (
+      <DashboardLayout>
+        <ErrorMessage error={error} retry={loadData} />
+      </DashboardLayout>
+    );
+  }
 
   return (
     <DashboardLayout>
