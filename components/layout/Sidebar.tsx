@@ -9,6 +9,7 @@ import {
   Users,
   FileText,
   BarChart3,
+  Calendar,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
@@ -42,15 +43,14 @@ const menuItems: MenuItem[] = [
       // { title: '카테고리 관리', href: '/products/categories' },
     ],
   },
-  // 🚧 미구현: 예약 관리 전체
-  // {
-  //   title: '예약 관리',
-  //   icon: <Calendar className="h-5 w-5" />,
-  //   children: [
-  //     { title: '예약 목록', href: '/reservations' },
-  //     { title: '예약 현황', href: '/reservations/status' },
-  //   ],
-  // },
+  // ✅ 구현 완료
+  {
+    title: '상품예약',
+    icon: <Calendar className="h-5 w-5" />,
+    children: [
+      { title: '여행상품예약', href: '/reservations/travel' },
+    ],
+  },
   // ✅ 구현 완료 (회원 목록만)
   {
     title: '회원 관리',
