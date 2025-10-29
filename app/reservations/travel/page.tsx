@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Search, Download, ChevronLeft, ChevronRight } from 'lucide-react';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
@@ -14,12 +14,16 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { mockReservations, mockReservationStats } from '@/data/mockReservations';
+import { LoadingSpinner } from '@/components/ui/loading-spinner';
+import { ErrorMessage } from '@/components/ui/error-message';
+import { getReservations, getReservationStats } from '@/lib/services/reservationService';
 import {
   ReservationFilters,
   ProductCategory,
   PaymentMethod,
   ReservationStatus,
+  TravelReservation,
+  ReservationStats,
 } from '@/types/reservation';
 
 const categories: ProductCategory[] = [
@@ -79,14 +83,41 @@ export default function TravelReservationsPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(30);
 
-  const filteredReservations = mockReservations;
-  const totalItems = filteredReservations.length;
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  // API 연동을 위한 상태
+  const [reservations, setReservations] = useState<TravelReservation[]>([]);
+  const [stats, setStats] = useState<ReservationStats | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+  const [totalPages, setTotalPages] = useState(1);
 
-  const paginatedReservations = filteredReservations.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
+  // 데이터 로드
+  useEffect(() => {
+    loadData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPage, itemsPerPage, filters]);
+
+  async function loadData() {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const [reservationsData, statsData] = await Promise.all([
+        getReservations(currentPage, itemsPerPage, filters),
+        getReservationStats(),
+      ]);
+
+      setReservations(reservationsData.data);
+      setTotalPages(reservationsData.pagination.totalPages);
+      setStats(statsData);
+    } catch (err) {
+      setError(err as Error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  const totalItems = reservations.length;
+  const paginatedReservations = reservations;
 
   const handlePaymentMethodToggle = (method: PaymentMethod) => {
     setFilters((prev) => ({
@@ -105,6 +136,24 @@ export default function TravelReservationsPage() {
         : [...(prev.statuses || []), status],
     }));
   };
+
+  // 로딩 처리
+  if (loading && !reservations.length) {
+    return (
+      <DashboardLayout>
+        <LoadingSpinner />
+      </DashboardLayout>
+    );
+  }
+
+  // 에러 처리
+  if (error) {
+    return (
+      <DashboardLayout>
+        <ErrorMessage error={error} retry={loadData} />
+      </DashboardLayout>
+    );
+  }
 
   return (
     <DashboardLayout>
@@ -306,23 +355,25 @@ export default function TravelReservationsPage() {
       </div>
 
       {/* 통계 요약 */}
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 mb-6 p-6">
-        <h3 className="text-sm font-semibold text-gray-700 mb-4">
-          전체 예약내역 통계 <span className="text-gray-500">(최근 1주일 이내)</span>
-        </h3>
-        <div className="grid grid-cols-4 gap-4">
-          {Object.entries(mockReservationStats)
-            .filter(([status]) => !['예약가능', '예약확정', '예약불가'].includes(status))
-            .map(([status, amount]) => (
-              <div key={status} className="text-center">
-                <div className="text-sm text-gray-600 mb-1">{status}</div>
-                <div className="text-lg font-semibold text-gray-900">
-                  {amount.toLocaleString()}원
+      {stats && (
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 mb-6 p-6">
+          <h3 className="text-sm font-semibold text-gray-700 mb-4">
+            전체 예약내역 통계 <span className="text-gray-500">(최근 1주일 이내)</span>
+          </h3>
+          <div className="grid grid-cols-4 gap-4">
+            {Object.entries(stats)
+              .filter(([status]) => !['예약가능', '예약확정', '예약불가'].includes(status))
+              .map(([status, amount]) => (
+                <div key={status} className="text-center">
+                  <div className="text-sm text-gray-600 mb-1">{status}</div>
+                  <div className="text-lg font-semibold text-gray-900">
+                    {amount.toLocaleString()}원
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* 테이블 헤더 */}
       <div className="flex items-center justify-between mb-4">
