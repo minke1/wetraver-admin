@@ -49,6 +49,7 @@ const menuItems: MenuItem[] = [
     icon: <Calendar className="h-5 w-5" />,
     children: [
       { title: '여행상품예약', href: '/reservations/travel' },
+      { title: '정산관리', href: '/settlements' },
     ],
   },
   // ✅ 구현 완료 (회원 목록만)

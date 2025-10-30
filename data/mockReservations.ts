@@ -72,6 +72,16 @@ export const mockReservations: TravelReservation[] = [
     priceKRW: 140000,
     priceTHB: 98,
     createdAt: '2025-10-22 17:47:42',
+    // Vehicle 전용 필드
+    firstName: 'The',
+    lastName: 'vt',
+    countryCode: 'GB(+44)',
+    meetingDate: '2025-10-23',
+    totalAmountKRW: 140000,
+    totalAmountUSD: 98,
+    invoiceStatus: '인보이스 준비',
+    voucherStatus: '바우처 준비',
+    voucherDate: '2025-02-08 00:00',
   },
   {
     id: 159,
@@ -88,6 +98,16 @@ export const mockReservations: TravelReservation[] = [
     priceKRW: 110000,
     priceTHB: 77,
     createdAt: '2025-10-22 17:39:45',
+    // Vehicle 전용 필드
+    firstName: 'The',
+    lastName: 'vt',
+    countryCode: 'GB(+44)',
+    meetingDate: '2025-10-22',
+    totalAmountKRW: 110000,
+    totalAmountUSD: 77,
+    invoiceStatus: '인보이스 준비',
+    voucherStatus: '바우처 준비',
+    voucherDate: '2025-02-08 00:00',
   },
   {
     id: 158,
