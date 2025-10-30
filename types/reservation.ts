@@ -65,6 +65,19 @@ export interface TravelReservation {
   specialRequestsEn?: string;
   adminMemo?: string;
 
+  // Vehicle 전용 필드
+  departure?: string; // 출발지
+  destination?: string; // 도착지
+  meetingDate?: string; // 미팅날짜
+  productOption?: string; // 상품선택
+  flightArrivalDate?: string; // 항공 도착 날짜
+  flightArrivalTime?: string; // 항공 도착 시간 (HH:mm 형식)
+  pickupLocation?: string; // 출발지(픽업호텔)
+  dropoffLocation?: string; // 목적지(골프장명)
+  otherRequests?: string; // 기타요청
+  changeApplied?: boolean; // 변경사항 적용
+  changeNotes?: string; // 변경사항 내용
+
   // 금액 정보
   totalAmountKRW?: number;
   totalAmountUSD?: number;

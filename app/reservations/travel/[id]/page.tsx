@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { ErrorMessage } from '@/components/ui/error-message';
 import { ReservationForm } from '@/components/reservations/ReservationForm';
+import { VehicleReservationForm } from '@/components/reservations/VehicleReservationForm';
 import { PaymentInfo } from '@/components/reservations/PaymentInfo';
 import { VoucherInfo } from '@/components/reservations/VoucherInfo';
 import { HistoryLog } from '@/components/reservations/HistoryLog';
@@ -119,7 +120,11 @@ export default function TravelReservationDetailPage() {
         </div>
 
         {/* 컴포넌트로 분리된 섹션들 */}
-        <ReservationForm data={formData} onChange={setFormData} />
+        {formData.productCategory === 'Vehicle' ? (
+          <VehicleReservationForm data={formData} onChange={setFormData} />
+        ) : (
+          <ReservationForm data={formData} onChange={setFormData} />
+        )}
         <PaymentInfo data={formData} onChange={setFormData} />
         <VoucherInfo data={formData} onChange={setFormData} />
         <HistoryLog reservationId={reservationId} />

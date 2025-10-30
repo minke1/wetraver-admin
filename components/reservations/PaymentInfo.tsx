@@ -17,12 +17,22 @@ const statuses: ReservationStatus[] = [
   '이용완료',
 ];
 
+const vehicleStatuses: ReservationStatus[] = [
+  '예약접수',
+  '결제대기',
+  '결제완료',
+  '예약취소',
+];
+
 interface PaymentInfoProps {
   data: TravelReservation;
   onChange: (data: TravelReservation) => void;
 }
 
 export function PaymentInfo({ data, onChange }: PaymentInfoProps) {
+  const isVehicle = data.productCategory === 'Vehicle';
+  const displayStatuses = isVehicle ? vehicleStatuses : statuses;
+
   const updateField = <K extends keyof TravelReservation>(
     field: K,
     value: TravelReservation[K]
@@ -92,7 +102,7 @@ export function PaymentInfo({ data, onChange }: PaymentInfoProps) {
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        {statuses.map((status) => (
+                        {displayStatuses.map((status) => (
                           <SelectItem key={status} value={status}>
                             {status}
                           </SelectItem>
@@ -109,7 +119,7 @@ export function PaymentInfo({ data, onChange }: PaymentInfoProps) {
                 </td>
                 <td className="py-3 px-4">
                   <div className="flex gap-2 flex-wrap">
-                    {statuses.slice(0, 7).map((status) => (
+                    {displayStatuses.map((status) => (
                       <Button key={status} variant="outline" size="sm">
                         {status}
                       </Button>
@@ -122,43 +132,49 @@ export function PaymentInfo({ data, onChange }: PaymentInfoProps) {
         </div>
       </div>
 
-      {/* 무통장 입금정보 */}
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200">
-        <div className="border-b border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-900">무통장 입금정보</h2>
+      {/* 무통장 입금정보 - Vehicle은 제외 */}
+      {!isVehicle && (
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+          <div className="border-b border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-gray-900">
+              무통장 입금정보
+            </h2>
+          </div>
+          <div className="p-6">
+            <table className="w-full text-sm">
+              <tbody>
+                <tr>
+                  <td className="py-3 px-4 bg-gray-50 font-medium text-gray-700 w-1/6">
+                    이름/연락처/이메일
+                  </td>
+                  <td className="py-3 px-4">
+                    <div className="flex gap-2">
+                      <Input
+                        placeholder="결제자명"
+                        value={data.customerName}
+                        onChange={(e) =>
+                          updateField('customerName', e.target.value)
+                        }
+                      />
+                      <Input
+                        placeholder="휴대전화"
+                        value={data.phone}
+                        onChange={(e) => updateField('phone', e.target.value)}
+                      />
+                      <Input
+                        placeholder="이메일"
+                        type="email"
+                        value={data.email}
+                        onChange={(e) => updateField('email', e.target.value)}
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div className="p-6">
-          <table className="w-full text-sm">
-            <tbody>
-              <tr>
-                <td className="py-3 px-4 bg-gray-50 font-medium text-gray-700 w-1/6">
-                  이름/연락처/이메일
-                </td>
-                <td className="py-3 px-4">
-                  <div className="flex gap-2">
-                    <Input
-                      placeholder="결제자명"
-                      value={data.customerName}
-                      onChange={(e) => updateField('customerName', e.target.value)}
-                    />
-                    <Input
-                      placeholder="휴대전화"
-                      value={data.phone}
-                      onChange={(e) => updateField('phone', e.target.value)}
-                    />
-                    <Input
-                      placeholder="이메일"
-                      type="email"
-                      value={data.email}
-                      onChange={(e) => updateField('email', e.target.value)}
-                    />
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      )}
     </>
   );
 }

@@ -40,4 +40,7 @@ export const ENDPOINTS = {
     PRODUCT_SALES: '/api/dashboard/product-sales',
     RECENT_RESERVATIONS: '/api/dashboard/recent-reservations',
   },
+
+  // 정산 관련
+  SETTLEMENTS: '/api/settlements',
 } as const;

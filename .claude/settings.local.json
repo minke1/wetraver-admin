@@ -36,7 +36,10 @@
       "Bash(cat:*)",
       "Bash(netstat:*)",
       "Bash(findstr:*)",
-      "Bash(if exist \".next\" rmdir /s /q \".next\")"
+      "Bash(if exist \".next\" rmdir /s /q \".next\")",
+      "Bash(tree:*)",
+      "Bash(if not exist \"F:\\trencrawl_admin\\app\\settlements\\[id]\" mkdir \"F:\\trencrawl_admin\\app\\settlements\\[id]\")",
+      "Bash(npx kill-port:*)"
     ],
     "deny": [],
     "ask": []
