@@ -13,7 +13,7 @@ import { ErrorMessage } from '@/components/ui/error-message';
 import { TrendingUp, TrendingDown, DollarSign, ShoppingCart, Users, Package } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { format } from 'date-fns';
-import { TravelReservation } from '@/types/reservation';
+import type { Reservation } from '@/lib/mock-data/reservations';
 import type { DashboardStats, DailyRevenue, ProductSales } from '@/lib/mock-data/dashboard';
 
 const COLORS = ['#2D7FF9', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#EC4899', '#06B6D4', '#84CC16'];
@@ -62,7 +62,7 @@ export default function DashboardPage() {
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [dailyRevenue, setDailyRevenue] = useState<DailyRevenue[]>([]);
   const [productSales, setProductSales] = useState<ProductSales[]>([]);
-  const [recentReservations, setRecentReservations] = useState<TravelReservation[]>([]);
+  const [recentReservations, setRecentReservations] = useState<Reservation[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
@@ -239,12 +239,12 @@ export default function DashboardPage() {
                       {reservation.customerName}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                      {reservation.checkIn || reservation.reservationDate}
+                      {reservation.travelDate || reservation.reservationDate}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
                         className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                          reservation.status === '결제완료' || reservation.status === '이용완료'
+                          reservation.status === '예약완료'
                             ? 'bg-success-100 text-success-800'
                             : reservation.status === '결제대기'
                             ? 'bg-warning-100 text-warning-800'
@@ -255,7 +255,7 @@ export default function DashboardPage() {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      ₩{(reservation.priceKRW || reservation.totalAmountKRW || 0).toLocaleString()}
+                      ₩{reservation.amount.toLocaleString()}
                     </td>
                   </tr>
                 ))}

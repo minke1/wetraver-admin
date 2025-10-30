@@ -281,7 +281,7 @@ export default function SettlementsPage() {
               <div className="flex gap-2">
                 <Select
                   value={filters.searchType}
-                  onValueChange={(value: any) =>
+                  onValueChange={(value: '예약번호' | '예약자명' | '담당자명' | '상품명' | '예약지휴대폰') =>
                     setFilters({ ...filters, searchType: value })
                   }
                 >

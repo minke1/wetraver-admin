@@ -2,7 +2,7 @@
  * 정산 관련 API 서비스
  */
 
-import { get, post, put, del } from '@/lib/api/client';
+import { get, put, del } from '@/lib/api/client';
 import { ENDPOINTS } from '@/lib/api/endpoints';
 import type { PaginatedResponse } from '@/types/api';
 import type {

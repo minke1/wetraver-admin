@@ -40,20 +40,20 @@ export async function getReservations(
 
     if (filters) {
       if (filters.category) {
-        filtered = filtered.filter(r => r.category === filters.category);
+        filtered = filtered.filter(r => r.productCategory === filters.category);
       }
       if (filters.statuses?.length) {
         filtered = filtered.filter(r => filters.statuses!.includes(r.status));
       }
       if (filters.paymentMethods?.length) {
-        filtered = filtered.filter(r => filters.paymentMethods!.includes(r.paymentMethod));
+        filtered = filtered.filter(r => r.paymentMethod && filters.paymentMethods!.includes(r.paymentMethod));
       }
       if (filters.searchQuery) {
         const query = filters.searchQuery.toLowerCase();
         filtered = filtered.filter(r =>
           r.productName.toLowerCase().includes(query) ||
           r.customerName.toLowerCase().includes(query) ||
-          r.customerPhone.includes(query)
+          r.phone.includes(query)
         );
       }
     }

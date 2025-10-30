@@ -4,7 +4,7 @@
 
 import { get } from '@/lib/api/client';
 import { ENDPOINTS } from '@/lib/api/endpoints';
-import type { TravelReservation } from '@/types/reservation';
+import type { Reservation } from '@/lib/mock-data/reservations';
 import type { DashboardStats, DailyRevenue, ProductSales } from '@/lib/mock-data/dashboard';
 import {
   getDashboardStats as getMockDashboardStats,
@@ -47,9 +47,9 @@ export async function getProductSales(): Promise<ProductSales[]> {
   return get<ProductSales[]>(ENDPOINTS.DASHBOARD.PRODUCT_SALES);
 }
 
-export async function getRecentReservations(): Promise<TravelReservation[]> {
+export async function getRecentReservations(): Promise<Reservation[]> {
   if (USE_MOCK) {
     return Promise.resolve(getMockRecentReservations());
   }
-  return get<TravelReservation[]>(ENDPOINTS.DASHBOARD.RECENT_RESERVATIONS);
+  return get<Reservation[]>(ENDPOINTS.DASHBOARD.RECENT_RESERVATIONS);
 }

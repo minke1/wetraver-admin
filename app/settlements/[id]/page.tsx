@@ -16,7 +16,7 @@ import {
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { ErrorMessage } from '@/components/ui/error-message';
 import { getSettlementById, updateSettlement, deleteSettlement } from '@/lib/services/settlementService';
-import type { Settlement } from '@/types/settlement';
+import type { Settlement, SettlementStatus } from '@/types/settlement';
 
 export default function SettlementDetailPage() {
   const params = useParams();
@@ -63,11 +63,12 @@ export default function SettlementDetailPage() {
       await updateSettlement(settlementId, {
         priceKRW,
         priceTHB,
-        settlementStatus: settlementStatus as any,
+        settlementStatus: settlementStatus as SettlementStatus,
       });
       alert('수정되었습니다.');
       router.push('/settlements');
-    } catch (err) {
+    } catch (error) {
+      console.error('Update error:', error);
       alert('수정 중 오류가 발생했습니다.');
     }
   }
@@ -79,7 +80,8 @@ export default function SettlementDetailPage() {
       await deleteSettlement(settlementId);
       alert('삭제되었습니다.');
       router.push('/settlements');
-    } catch (err) {
+    } catch (error) {
+      console.error('Delete error:', error);
       alert('삭제 중 오류가 발생했습니다.');
     }
   }
