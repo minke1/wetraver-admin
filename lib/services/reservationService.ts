@@ -12,6 +12,9 @@ import type {
   ReservationFilters,
   ReservationStats
 } from '@/types/reservation';
+import { mockReservations, mockReservationStats } from '@/data/mockReservations';
+
+const USE_MOCK = process.env.NEXT_PUBLIC_USE_MOCK === 'true';
 
 /**
  * 예약 목록 조회
@@ -31,6 +34,48 @@ export async function getReservations(
   limit: number = 20,
   filters?: ReservationFilters
 ): Promise<PaginatedResponse<TravelReservation>> {
+  if (USE_MOCK) {
+    // Mock 데이터 필터링 및 페이지네이션
+    let filtered = [...mockReservations];
+
+    if (filters) {
+      if (filters.category) {
+        filtered = filtered.filter(r => r.category === filters.category);
+      }
+      if (filters.statuses?.length) {
+        filtered = filtered.filter(r => filters.statuses!.includes(r.status));
+      }
+      if (filters.paymentMethods?.length) {
+        filtered = filtered.filter(r => filters.paymentMethods!.includes(r.paymentMethod));
+      }
+      if (filters.searchQuery) {
+        const query = filters.searchQuery.toLowerCase();
+        filtered = filtered.filter(r =>
+          r.productName.toLowerCase().includes(query) ||
+          r.customerName.toLowerCase().includes(query) ||
+          r.customerPhone.includes(query)
+        );
+      }
+    }
+
+    const start = (page - 1) * limit;
+    const end = start + limit;
+    const paginatedData = filtered.slice(start, end);
+    const totalPages = Math.ceil(filtered.length / limit);
+
+    return Promise.resolve({
+      data: paginatedData,
+      pagination: {
+        total: filtered.length,
+        page,
+        limit,
+        totalPages,
+        hasNext: page < totalPages,
+        hasPrev: page > 1,
+      },
+    });
+  }
+
   // 쿼리 파라미터 구성
   const params = new URLSearchParams({
     page: page.toString(),
@@ -69,6 +114,13 @@ export async function getReservations(
 export async function getReservationById(
   id: number
 ): Promise<TravelReservation> {
+  if (USE_MOCK) {
+    const reservation = mockReservations.find(r => r.id === id);
+    if (!reservation) {
+      throw new Error(`예약을 찾을 수 없습니다. (ID: ${id})`);
+    }
+    return Promise.resolve(reservation);
+  }
   return get<TravelReservation>(ENDPOINTS.RESERVATIONS.DETAIL(id));
 }
 
@@ -88,6 +140,11 @@ export async function getReservationById(
 export async function createReservation(
   data: Omit<TravelReservation, 'id' | 'createdAt'>
 ): Promise<TravelReservation> {
+  if (USE_MOCK) {
+    // Mock에서는 생성 기능 미지원
+    console.warn('Mock 모드에서는 예약 생성이 지원되지 않습니다.');
+    return Promise.reject(new Error('Mock 모드에서는 예약 생성이 지원되지 않습니다.'));
+  }
   return post<TravelReservation>(ENDPOINTS.RESERVATIONS.CREATE, data);
 }
 
@@ -108,6 +165,14 @@ export async function updateReservation(
   id: number,
   data: Partial<TravelReservation>
 ): Promise<TravelReservation> {
+  if (USE_MOCK) {
+    const reservation = mockReservations.find(r => r.id === id);
+    if (!reservation) {
+      throw new Error(`예약을 찾을 수 없습니다. (ID: ${id})`);
+    }
+    // Mock에서는 실제 수정하지 않고 수정된 것처럼 반환만
+    return Promise.resolve({ ...reservation, ...data });
+  }
   return put<TravelReservation>(ENDPOINTS.RESERVATIONS.UPDATE(id), data);
 }
 
@@ -120,6 +185,10 @@ export async function updateReservation(
  * await deleteReservation(123);
  */
 export async function deleteReservation(id: number): Promise<void> {
+  if (USE_MOCK) {
+    console.warn('Mock 모드에서는 예약 삭제가 지원되지 않습니다.');
+    return Promise.resolve();
+  }
   return del<void>(ENDPOINTS.RESERVATIONS.DELETE(id));
 }
 
@@ -133,5 +202,8 @@ export async function deleteReservation(id: number): Promise<void> {
  * console.log(stats.예약완료); // 15
  */
 export async function getReservationStats(): Promise<ReservationStats> {
+  if (USE_MOCK) {
+    return Promise.resolve(mockReservationStats);
+  }
   return get<ReservationStats>(ENDPOINTS.RESERVATIONS.STATS);
 }

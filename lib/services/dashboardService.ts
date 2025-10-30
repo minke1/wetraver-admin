@@ -6,8 +6,19 @@ import { get } from '@/lib/api/client';
 import { ENDPOINTS } from '@/lib/api/endpoints';
 import type { TravelReservation } from '@/types/reservation';
 import type { DashboardStats, DailyRevenue, ProductSales } from '@/lib/mock-data/dashboard';
+import {
+  getDashboardStats as getMockDashboardStats,
+  getDailyRevenue as getMockDailyRevenue,
+  getProductSales as getMockProductSales,
+  getRecentReservations as getMockRecentReservations
+} from '@/lib/mock-data/dashboard';
+
+const USE_MOCK = process.env.NEXT_PUBLIC_USE_MOCK === 'true';
 
 export async function getDashboardStats(): Promise<DashboardStats> {
+  if (USE_MOCK) {
+    return Promise.resolve(getMockDashboardStats());
+  }
   return get<DashboardStats>(ENDPOINTS.DASHBOARD.STATS);
 }
 
@@ -15,6 +26,11 @@ export async function getDailyRevenue(
   startDate?: string,
   endDate?: string
 ): Promise<DailyRevenue[]> {
+  if (USE_MOCK) {
+    // Mock 데이터는 날짜 필터링 없이 전체 반환
+    return Promise.resolve(getMockDailyRevenue());
+  }
+
   const params = new URLSearchParams();
   if (startDate) params.append('startDate', startDate);
   if (endDate) params.append('endDate', endDate);
@@ -25,9 +41,15 @@ export async function getDailyRevenue(
 }
 
 export async function getProductSales(): Promise<ProductSales[]> {
+  if (USE_MOCK) {
+    return Promise.resolve(getMockProductSales());
+  }
   return get<ProductSales[]>(ENDPOINTS.DASHBOARD.PRODUCT_SALES);
 }
 
 export async function getRecentReservations(): Promise<TravelReservation[]> {
+  if (USE_MOCK) {
+    return Promise.resolve(getMockRecentReservations());
+  }
   return get<TravelReservation[]>(ENDPOINTS.DASHBOARD.RECENT_RESERVATIONS);
 }

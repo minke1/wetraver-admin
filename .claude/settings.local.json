@@ -31,7 +31,12 @@
       "Bash(git branch:*)",
       "Bash(git push:*)",
       "mcp__playwright__browser_close",
-      "Bash(timeout /t 5)"
+      "Bash(timeout /t 5)",
+      "Bash(if not exist \"F:\\trencrawl_admin\\components\\reservations\" mkdir \"F:\\trencrawl_admin\\components\\reservations\")",
+      "Bash(cat:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(if exist \".next\" rmdir /s /q \".next\")"
     ],
     "deny": [],
     "ask": []

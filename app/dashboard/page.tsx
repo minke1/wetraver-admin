@@ -255,7 +255,7 @@ export default function DashboardPage() {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      ₩{reservation.priceKRW.toLocaleString()}
+                      ₩{(reservation.priceKRW || reservation.totalAmountKRW || 0).toLocaleString()}
                     </td>
                   </tr>
                 ))}
