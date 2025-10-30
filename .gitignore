@@ -21,6 +21,9 @@
 # playwright mcp
 .playwright-mcp/
 
+# markdown files
+*.md
+
 # debug
 npm-debug.log*
 yarn-debug.log*
