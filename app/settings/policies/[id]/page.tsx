@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import { DashboardLayout } from '@/components/layout/DashboardLayout';
 import { Button } from '@/components/ui/button';
@@ -8,15 +8,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ArrowLeft, Save } from 'lucide-react';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { mockPolicies } from '@/data/mockPolicies';
-import type { TuiEditorHandle } from '@/components/editor/TuiEditor';
 import { toast } from 'sonner';
-
-const TuiEditor = dynamic(() => import('@/components/editor/TuiEditor'), {
-  ssr: false,
-  loading: () => <div className="h-[500px] bg-gray-50 animate-pulse rounded-md" />,
-});
 
 export default function PolicyEditPage() {
   const router = useRouter();
@@ -24,20 +17,17 @@ export default function PolicyEditPage() {
   const id = params.id as string;
 
   const [title, setTitle] = useState('');
+  const [pcContent, setPcContent] = useState('');
+  const [mobileContent, setMobileContent] = useState('');
   const [loading, setLoading] = useState(true);
-
-  const pcEditorRef = useRef<TuiEditorHandle>(null);
-  const mobileEditorRef = useRef<TuiEditorHandle>(null);
 
   useEffect(() => {
     const policy = mockPolicies.find((p) => p.id === parseInt(id));
     if (policy) {
       setTitle(policy.title);
-      setTimeout(() => {
-        pcEditorRef.current?.setHTML(policy.contentPC);
-        mobileEditorRef.current?.setHTML(policy.contentMobile);
-        setLoading(false);
-      }, 100);
+      setPcContent(policy.contentPC);
+      setMobileContent(policy.contentMobile);
+      setLoading(false);
     } else {
       setLoading(false);
     }
@@ -48,9 +38,6 @@ export default function PolicyEditPage() {
       toast.error('약관명을 입력하세요.');
       return;
     }
-
-    const pcContent = pcEditorRef.current?.getHTML() || '';
-    const mobileContent = mobileEditorRef.current?.getHTML() || '';
 
     console.log('저장 데이터:', {
       id,
@@ -108,24 +95,28 @@ export default function PolicyEditPage() {
             />
           </div>
 
-          {/* PC 에디터 */}
+          {/* PC 내용 */}
           <div className="space-y-2">
-            <Label>PC</Label>
-            <div className="border rounded-md overflow-hidden">
-              <TuiEditor ref={pcEditorRef} height="500px" placeholder="PC 내용을 입력하세요" />
-            </div>
+            <Label htmlFor="pcContent">PC</Label>
+            <textarea
+              id="pcContent"
+              value={pcContent}
+              onChange={(e) => setPcContent(e.target.value)}
+              placeholder="PC 내용을 입력하세요"
+              className="w-full min-h-[500px] p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
+            />
           </div>
 
-          {/* 모바일 에디터 */}
+          {/* 모바일 내용 */}
           <div className="space-y-2">
-            <Label>모바일</Label>
-            <div className="border rounded-md overflow-hidden">
-              <TuiEditor
-                ref={mobileEditorRef}
-                height="500px"
-                placeholder="모바일 내용을 입력하세요"
-              />
-            </div>
+            <Label htmlFor="mobileContent">모바일</Label>
+            <textarea
+              id="mobileContent"
+              value={mobileContent}
+              onChange={(e) => setMobileContent(e.target.value)}
+              placeholder="모바일 내용을 입력하세요"
+              className="w-full min-h-[500px] p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
+            />
           </div>
         </div>
       </div>
