@@ -10,6 +10,7 @@ import {
   FileText,
   BarChart3,
   Calendar,
+  Settings,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
@@ -90,6 +91,14 @@ const menuItems: MenuItem[] = [
   //   icon: <MessageSquare className="h-5 w-5" />,
   //   href: '/reviews',
   // },
+  // ✅ 구현 완료
+  {
+    title: '환경설정',
+    icon: <Settings className="h-5 w-5" />,
+    children: [
+      { title: '약관및정책관리', href: '/settings/policies' },
+    ],
+  },
   // ✅ 구현 완료 (매출 통계만)
   {
     title: '통계',
@@ -102,15 +111,6 @@ const menuItems: MenuItem[] = [
       // { title: '회원 통계', href: '/statistics/members' },
     ],
   },
-  // 🚧 미구현: 설정 전체
-  // {
-  //   title: '설정',
-  //   icon: <Settings className="h-5 w-5" />,
-  //   children: [
-  //     { title: '기본 설정', href: '/settings/general' },
-  //     { title: '관리자 계정', href: '/settings/admins' },
-  //   ],
-  // },
 ];
 
 export function Sidebar() {
