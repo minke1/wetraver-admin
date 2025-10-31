@@ -1,46 +1,48 @@
-'use client';
+"use client";
 
-import { useState, useRef } from 'react';
-import { useRouter } from 'next/navigation';
-import { DashboardLayout } from '@/components/layout/DashboardLayout';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { ArrowLeft, Save } from 'lucide-react';
-import Link from 'next/link';
-import dynamic from 'next/dynamic';
-import type { TuiEditorHandle } from '@/components/editor/TuiEditor';
-import { toast } from 'sonner';
+import { useState, useRef } from "react";
+import { useRouter } from "next/navigation";
+import { DashboardLayout } from "@/components/layout/DashboardLayout";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { ArrowLeft, Save } from "lucide-react";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import type { TuiEditorHandle } from "@/components/editor/TuiEditor";
+import { toast } from "sonner";
 
-const TuiEditor = dynamic(() => import('@/components/editor/TuiEditor'), {
+const TuiEditor = dynamic(() => import("@/components/editor/TuiEditor"), {
   ssr: false,
-  loading: () => <div className="h-[500px] bg-gray-50 animate-pulse rounded-md" />,
+  loading: () => (
+    <div className="h-[500px] bg-gray-50 animate-pulse rounded-md" />
+  ),
 });
 
 export default function PolicyNewPage() {
   const router = useRouter();
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState("");
 
   const pcEditorRef = useRef<TuiEditorHandle>(null);
   const mobileEditorRef = useRef<TuiEditorHandle>(null);
 
   const handleSave = () => {
     if (!title.trim()) {
-      toast.error('약관명을 입력하세요.');
+      toast.error("약관명을 입력하세요.");
       return;
     }
 
-    const pcContent = pcEditorRef.current?.getHTML() || '';
-    const mobileContent = mobileEditorRef.current?.getHTML() || '';
+    const pcContent = pcEditorRef.current?.getHTML() || "";
+    const mobileContent = mobileEditorRef.current?.getHTML() || "";
 
-    console.log('저장 데이터:', {
+    console.log("저장 데이터:", {
       title,
       contentPC: pcContent,
       contentMobile: mobileContent,
     });
 
-    toast.success('약관이 등록되었습니다.');
-    router.push('/settings/policies');
+    toast.success("약관이 등록되었습니다.");
+    router.push("/settings/policies");
   };
 
   return (
@@ -56,7 +58,9 @@ export default function PolicyNewPage() {
               </Button>
             </Link>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">약관 및 정책 신규등록</h1>
+              <h1 className="text-2xl font-bold text-gray-900">
+                약관 및 정책 신규등록
+              </h1>
             </div>
           </div>
           <Button onClick={handleSave} className="gap-2">
@@ -82,7 +86,11 @@ export default function PolicyNewPage() {
           <div className="space-y-2">
             <Label>PC</Label>
             <div className="border rounded-md overflow-hidden">
-              <TuiEditor ref={pcEditorRef} height="500px" placeholder="PC 내용을 입력하세요" />
+              <TuiEditor
+                ref={pcEditorRef}
+                height="500px"
+                placeholder="PC 내용을 입력하세요"
+              />
             </div>
           </div>
 

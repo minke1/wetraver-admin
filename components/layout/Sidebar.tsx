@@ -97,18 +97,17 @@ const menuItems: MenuItem[] = [
     icon: <Settings className="h-5 w-5" />,
     children: [
       { title: '약관및정책관리', href: '/settings/policies' },
+      { title: '운영자계정관리', href: '/settings/admins' },
     ],
   },
-  // ✅ 구현 완료 (매출 통계만)
+  // ✅ 구현 완료
   {
     title: '통계',
     icon: <BarChart3 className="h-5 w-5" />,
     children: [
-      { title: '매출 통계', href: '/statistics/revenue' },
-      // 🚧 미구현: 상품 통계
-      // { title: '상품 통계', href: '/statistics/products' },
-      // 🚧 미구현: 회원 통계
-      // { title: '회원 통계', href: '/statistics/members' },
+      // { title: '매출 통계', href: '/statistics/revenue' },
+      { title: '매출분석', href: '/statistics/sales' },
+      { title: '회원및 방문분석', href: '/statistics/members' },
     ],
   },
 ];

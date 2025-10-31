@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { Sidebar } from './Sidebar';
-import { Header } from './Header';
+import { Sidebar } from "./Sidebar";
+import { Header } from "./Header";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
