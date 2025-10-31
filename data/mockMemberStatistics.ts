@@ -11,8 +11,76 @@ export interface MemberSummary {
   totalNetCount: number;
 }
 
+// 년별 회원 가입/탈퇴 데이터
+export const mockMemberYearStatistics: MemberStatistic[] = [
+  { period: '2024', signupCount: 2, withdrawalCount: 1, netCount: 1 },
+  { period: '2025', signupCount: 35, withdrawalCount: 1, netCount: 34 },
+];
+
+// 월별 회원 가입/탈퇴 데이터
+export const mockMemberMonthStatistics: MemberStatistic[] = [
+  { period: '2025-01', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-02', signupCount: 3, withdrawalCount: 0, netCount: 3 },
+  { period: '2025-03', signupCount: 1, withdrawalCount: 0, netCount: 1 },
+  { period: '2025-04', signupCount: 1, withdrawalCount: 0, netCount: 1 },
+  { period: '2025-05', signupCount: 1, withdrawalCount: 0, netCount: 1 },
+  { period: '2025-06', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-07', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-08', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-09', signupCount: 7, withdrawalCount: 0, netCount: 7 },
+  { period: '2025-10', signupCount: 22, withdrawalCount: 1, netCount: 21 },
+  { period: '2025-11', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-12', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+];
+
+// 일별 회원 가입/탈퇴 데이터
+export const mockMemberDayStatistics: MemberStatistic[] = [
+  { period: '2025-10-01', signupCount: 2, withdrawalCount: 0, netCount: 2 },
+  { period: '2025-10-02', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-03', signupCount: 3, withdrawalCount: 0, netCount: 3 },
+  { period: '2025-10-04', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-05', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-06', signupCount: 3, withdrawalCount: 0, netCount: 3 },
+  { period: '2025-10-07', signupCount: 1, withdrawalCount: 0, netCount: 1 },
+  { period: '2025-10-08', signupCount: 2, withdrawalCount: 1, netCount: 1 },
+  { period: '2025-10-09', signupCount: 6, withdrawalCount: 0, netCount: 6 },
+  { period: '2025-10-10', signupCount: 1, withdrawalCount: 0, netCount: 1 },
+  { period: '2025-10-11', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-12', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-13', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-14', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-15', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-16', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-17', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-18', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-19', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-20', signupCount: 1, withdrawalCount: 0, netCount: 1 },
+  { period: '2025-10-21', signupCount: 2, withdrawalCount: 0, netCount: 2 },
+  { period: '2025-10-22', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-23', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-24', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-25', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-26', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-27', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-28', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-29', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-30', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '2025-10-31', signupCount: 1, withdrawalCount: 0, netCount: 1 },
+];
+
+// 요일별 회원 가입/탈퇴 데이터
+export const mockMemberWeekdayStatistics: MemberStatistic[] = [
+  { period: '일', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+  { period: '월', signupCount: 8, withdrawalCount: 0, netCount: 8 },
+  { period: '화', signupCount: 3, withdrawalCount: 0, netCount: 3 },
+  { period: '수', signupCount: 7, withdrawalCount: 1, netCount: 6 },
+  { period: '목', signupCount: 3, withdrawalCount: 0, netCount: 3 },
+  { period: '금', signupCount: 1, withdrawalCount: 0, netCount: 1 },
+  { period: '토', signupCount: 0, withdrawalCount: 0, netCount: 0 },
+];
+
 // 시간별 회원 가입/탈퇴 데이터
-export const mockMemberStatistics: MemberStatistic[] = [
+export const mockMemberHourStatistics: MemberStatistic[] = [
   { period: '00:00', signupCount: 5, withdrawalCount: 1, netCount: 4 },
   { period: '01:00', signupCount: 3, withdrawalCount: 0, netCount: 3 },
   { period: '02:00', signupCount: 2, withdrawalCount: 0, netCount: 2 },

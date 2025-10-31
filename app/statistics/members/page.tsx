@@ -20,7 +20,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import {
-  mockMemberStatistics,
+  mockMemberYearStatistics,
+  mockMemberMonthStatistics,
+  mockMemberDayStatistics,
+  mockMemberWeekdayStatistics,
+  mockMemberHourStatistics,
   mockMemberSummary,
   mockVisitorYearStatistics,
   mockVisitorMonthStatistics,
@@ -107,6 +111,44 @@ export default function MemberStatisticsPage() {
    * 회원가입통계 탭 렌더링
    */
   const renderMemberStatistics = () => {
+    // 각 통계 유형별로 컬럼 헤더 결정
+    const getMemberPeriodLabel = () => {
+      switch (memberStatType) {
+        case "년별통계":
+          return "년";
+        case "월별통계":
+          return "월";
+        case "일별통계":
+          return "날짜";
+        case "요일별통계":
+          return "요일";
+        case "시간별통계":
+          return "시간대";
+        default:
+          return "기간";
+      }
+    };
+
+    // 각 통계 유형별로 표시할 데이터 결정
+    const getMemberData = () => {
+      switch (memberStatType) {
+        case "년별통계":
+          return mockMemberYearStatistics;
+        case "월별통계":
+          return mockMemberMonthStatistics;
+        case "일별통계":
+          return mockMemberDayStatistics;
+        case "요일별통계":
+          return mockMemberWeekdayStatistics;
+        case "시간별통계":
+          return mockMemberHourStatistics;
+        default:
+          return mockMemberHourStatistics;
+      }
+    };
+
+    const memberData = getMemberData();
+
     return (
       <>
         {/* 필터 섹션 */}
@@ -235,46 +277,78 @@ export default function MemberStatisticsPage() {
               <thead className="bg-gray-50">
                 <tr>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    시간대
+                    {getMemberPeriodLabel()}
                   </th>
                   <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                     회원가입자수
                   </th>
+                  <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    회원탈퇴자수
+                  </th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                {mockMemberStatistics.map((stat, index) => (
-                  <tr key={index} className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      {stat.period}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-center">
-                      <div className="flex items-center justify-center gap-2">
-                        <span className="text-primary-600 font-medium">
-                          {stat.signupCount.toLocaleString()}명
-                        </span>
-                        <div className="text-xs text-gray-500">
-                          {stat.signupCount > 0
-                            ? (
-                                (stat.signupCount /
-                                  mockMemberSummary.totalSignupCount) *
-                                100
-                              ).toFixed(1)
-                            : 0}
-                          %
+                {memberData.map((stat, index) => {
+                  const totalSignupCount = memberData.reduce(
+                    (sum, s) => sum + s.signupCount,
+                    0
+                  );
+                  const totalWithdrawalCount = memberData.reduce(
+                    (sum, s) => sum + s.withdrawalCount,
+                    0
+                  );
+                  const signupPercentage =
+                    totalSignupCount > 0
+                      ? ((stat.signupCount / totalSignupCount) * 100).toFixed(1)
+                      : "0";
+                  const withdrawalPercentage =
+                    totalWithdrawalCount > 0
+                      ? ((stat.withdrawalCount / totalWithdrawalCount) * 100).toFixed(1)
+                      : "0";
+
+                  return (
+                    <tr key={index} className="hover:bg-gray-50">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        {stat.period}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center">
+                        <div className="flex items-center justify-center gap-2">
+                          <span className="text-gray-900">
+                            {stat.signupCount.toLocaleString()}
+                          </span>
+                          <div className="text-xs text-gray-500">
+                            {signupPercentage}%
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-center">
+                        <div className="flex items-center justify-center gap-2">
+                          <span className="text-gray-900">
+                            {stat.withdrawalCount.toLocaleString()}
+                          </span>
+                          <div className="text-xs text-gray-500">
+                            {withdrawalPercentage}%
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
               <tfoot className="bg-gray-100">
                 <tr>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">
                     합계
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-bold text-primary-600">
-                    {mockMemberSummary.totalSignupCount.toLocaleString()}명
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-bold text-gray-900">
+                    {memberData
+                      .reduce((sum, s) => sum + s.signupCount, 0)
+                      .toLocaleString()}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-center font-bold text-gray-900">
+                    {memberData
+                      .reduce((sum, s) => sum + s.withdrawalCount, 0)
+                      .toLocaleString()}
                   </td>
                 </tr>
               </tfoot>
@@ -299,7 +373,7 @@ export default function MemberStatisticsPage() {
         case "일별통계":
           return "날짜";
         case "요일별통계":
-          return "시간대";
+          return "요일";
         default:
           return "기간";
       }
